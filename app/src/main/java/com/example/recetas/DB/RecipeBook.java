@@ -1,4 +1,4 @@
-package com.example.recetas;
+package com.example.recetas.DB;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -70,6 +70,11 @@ public class RecipeBook extends SQLiteOpenHelper {
     private RecipeBook(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
+
+    protected RecipeBook(Context context){
+        super(context,NAME_BD,null,VERSION_BD);
+    }
+
 
     //CREA EL LIBRO DE RECETAS, SI ESTA CREADO DEVUELVE SU INSTANCIA
     public static RecipeBook getInstancia(Context contexto) {
