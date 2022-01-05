@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void Select_GenerarMenu(View view){
-       // Intent intento= new Intent(this, InsertarPlatoMain.class);
-       // startActivity(intento);
+        Intent intento= new Intent(this, GenerarMenu.class);
+        startActivity(intento);
     }
 }
