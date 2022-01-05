@@ -29,21 +29,27 @@ public class InsertarPlato extends AppCompatActivity {
         EditText Nombre;
         String Descripcion, Receta, Enlaces;
         float Proteinas, Calorias, HidratosCarbono, Grasa;
-        boolean Casero;
+        boolean Restaurante;
         TipoComida Tipo;
         Integer Id_Restaurant;
+
+
         List<Alergenos> Alergenos= new ArrayList<>();
+
 
         Nombre=findViewById(R.id.NombrePlato);
 
         //Queda por hacer
+
+        Alergenos.add(com.example.recetas.Enum.Alergenos.Apio);
+        Alergenos.add(com.example.recetas.Enum.Alergenos.Mostaza);
         Descripcion="Descripcion";
         Proteinas= new Float(2.2);
         Calorias=new Float(2.4);
         HidratosCarbono=new Float(2.2);
         Grasa= new Float(2.2);
-        Casero= true;
-        Tipo= TipoComida.ALMUERZO;
+        Restaurante= false;
+        Tipo= TipoComida.Desayuno;
         Receta= "Receta";
         Enlaces= "Enlaces";
         Id_Restaurant=null;
@@ -51,7 +57,7 @@ public class InsertarPlato extends AppCompatActivity {
 
 
         Dish dish = new Dish(InsertarPlato.this);
-        long id= dish.insertarPlato(Nombre.getText().toString(),Descripcion,Proteinas,Calorias,HidratosCarbono,Grasa,Alergenos,Casero,Tipo,Receta,Enlaces,Id_Restaurant);
+        long id= dish.insertarPlato(Nombre.getText().toString(),Descripcion,Proteinas,Calorias,HidratosCarbono,Grasa,Alergenos,Restaurante,Tipo,Receta,Enlaces,Id_Restaurant);
 
     }
 }

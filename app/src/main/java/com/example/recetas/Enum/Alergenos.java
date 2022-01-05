@@ -1,6 +1,6 @@
 package com.example.recetas.Enum;
 
 public enum Alergenos {
-    GLUTEN,CRUSTACEOS,HUEVO,PESCADO,FRUTOS_SECOS,SOJA,LACTEOS,MOLUSCOS,
-    MOSTAZA,APIO,ALTRAMUCES,SESAMO,DIOXIDO_DE_AZUFRE;
+    Glutén,Crustaceos,Huevo,Pescado,Frutos_Secos,Soja,Lacteos,Moluscos,
+    Mostaza,Apio,Altramuces,Sesamo,Dióxido_De_Azufre;
 }

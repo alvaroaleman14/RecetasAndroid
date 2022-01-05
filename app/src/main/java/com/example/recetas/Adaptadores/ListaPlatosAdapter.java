@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.recetas.Entidades.Plato;
 import com.example.recetas.R;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class ListaPlatosAdapter extends RecyclerView.Adapter<ListaPlatosAdapter.PlatoViewHolder> {
@@ -30,14 +32,24 @@ public class ListaPlatosAdapter extends RecyclerView.Adapter<ListaPlatosAdapter.
     @NonNull
     @Override
     public PlatoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_listar_platos_menu,null,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_plato,null,false);
         return new PlatoViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PlatoViewHolder holder, int position) {
         //Completar con el resto de atributos
-        holder.viewNombre.setText(listaPlatos.get(position).getName());
+        holder.viewName.setText(listaPlatos.get(position).getName());
+        holder.viewDescription.setText(listaPlatos.get(position).getDescription());
+        holder.viewProtein.setText(listaPlatos.get(position).getProtein().toString());
+        holder.viewFat.setText(listaPlatos.get(position).getFat().toString());
+        holder.viewCarbohydrate.setText(listaPlatos.get(position).getCarbohydrate().toString());
+        holder.viewCalorie.setText(listaPlatos.get(position).getCalorie().toString());
+        holder.viewCalorie.setText(listaPlatos.get(position).getCalorie().toString());
+        String AlergenosAux= listaPlatos.get(position).getAllergen().toString();
+        holder.viewAlergen.setText(AlergenosAux.substring(1,AlergenosAux.length()-1));
+        holder.viewIsRestaurant.setText(listaPlatos.get(position).getIs_restaurant() == true ? "Restaurante" : "Casero");
+        holder.viewType.setText(listaPlatos.get(position).getType().toString());
     }
 
 
@@ -57,13 +69,29 @@ public class ListaPlatosAdapter extends RecyclerView.Adapter<ListaPlatosAdapter.
 
 
         //Completar con el resto de atributos
-        TextView viewNombre;
+        TextView viewName;
+        TextView viewDescription;
+        TextView viewProtein;
+        TextView viewFat;
+        TextView viewCarbohydrate;
+        TextView viewCalorie;
+        TextView viewAlergen;
+        TextView viewIsRestaurant;
+        TextView viewType;
+
 
         public PlatoViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            viewNombre = itemView.findViewById(R.id.viewNombre);
-
+            viewName = itemView.findViewById(R.id.viewName);
+            viewDescription = itemView.findViewById(R.id.viewDescription);
+            viewProtein = itemView.findViewById(R.id.viewProtein);
+            viewFat = itemView.findViewById(R.id.viewFat);
+            viewCarbohydrate = itemView.findViewById(R.id.viewCarbohydrate);
+            viewCalorie = itemView.findViewById(R.id.viewCalorie);
+            viewAlergen = itemView.findViewById(R.id.viewAlergen);
+            viewIsRestaurant = itemView.findViewById(R.id.viewIsRestaurant);
+            viewType = itemView.findViewById(R.id.viewType);
 
         }
     }

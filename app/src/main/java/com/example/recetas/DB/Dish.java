@@ -75,7 +75,7 @@ public class Dish extends RecipeBook {
         Plato plato;
         Cursor cursorPlatos;
 
-        cursorPlatos = db.rawQuery("SELECT * FROM " + TABLE_NAME + " ORDER BY nombre ASC", null);
+        cursorPlatos = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
 
 
         if(cursorPlatos.moveToFirst()){
@@ -90,13 +90,20 @@ public class Dish extends RecipeBook {
                 plato.setCalorie(cursorPlatos.getFloat(6));
 
 
-                //Alergenos
+                //Alérgenos
                 String alergenosString= cursorPlatos.getString(7);
-                String alergenosStringNoBrackets=alergenosString.substring(1,alergenosString.length()-1);
-                List<Alergenos> alergenos= Arrays.asList(alergenosStringNoBrackets.split(",\\s+"))
-                        .stream()
-                        .map(Alergenos::valueOf)
-                        .collect(Collectors.toList());
+                List<Alergenos> alergenos;
+
+                if(alergenosString.equals("[]")){
+                    alergenos=new ArrayList<>();
+                }else{
+                    String alergenosStringNoBrackets=alergenosString.substring(1,alergenosString.length()-1);
+                    alergenos = Arrays.asList(alergenosStringNoBrackets.split(",\\s+"))
+                            .stream()
+                            .map(Alergenos::valueOf)
+                            .collect(Collectors.toList());
+                }
+
 
 
                 plato.setAllergen(alergenos);
