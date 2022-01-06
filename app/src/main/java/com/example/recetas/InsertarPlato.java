@@ -37,7 +37,7 @@ public class InsertarPlato extends AppCompatActivity {
         List<Alergenos> Alergenos= new ArrayList<>();
 
 
-        Nombre=findViewById(R.id.NombrePlato);
+        Nombre=findViewById(R.id.editTextDishName);
 
         //Queda por hacer
 

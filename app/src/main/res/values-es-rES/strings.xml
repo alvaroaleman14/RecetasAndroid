@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Recetas</string>
+    <string name="title_activity_generar_menu">Generar menú</string>
+    <string name="next">Siguiente</string>
+    <string name="previous">Anterior</string>
+    <string name="Dish_Name">Nombre</string>
+    <string name="Description_Dish">Descripción</string>
+    <string name="Protein">Proteina</string>
+    <string name="Calorie">Caloria</string>
+    <string name="Carbohydrate">Hidrato de Carbono</string>
+    <string name="Fat">Grasa</string>
+    <string name="Allergen">Alérgeno</string>
+    <string name="Is_In_Restaurant">Está en restaurante</string>
+    <string name="Food_day">Comida del día</string>
+    <string name="Breakfast">Desayuno</string>
+    <string name="Lunch">Almuerzo</string>
+    <string name="Dinner">Cena</string>
+    <string name="Recipe">Receta</string>
+    <string name="Links_Of_interest">Enlaces de interés</string>
+</resources>

@@ -1,13 +1,28 @@
 <resources>
     <string name="app_name">Recetas</string>
-    <string name="hint_nombre">Nombre</string>
-    <string name="title_activity_generar_menu">GenerarMenu</string>
+    <string name="title_activity_generar_menu">"Generate menu "</string>
+
+    <!--Strings used for InsertarPLato -->
+    <string name="Dish_Name">Name</string>
+    <string name="Description_Dish">Description</string>
+    <string name="Protein">Protein</string>
+    <string name="Calorie">Calorie</string>
+    <string name="Carbohydrate">Carbohydrate</string>
+    <string name="Fat">Fat</string>
+    <string name="Allergen">Allergen</string>
+    <string name="Is_In_Restaurant">Is in restaurant</string>
+    <string name="Food_day">Food of the day</string>
+    <string name="Breakfast">Breakfast</string>
+    <string name="Lunch">Lunch</string>
+    <string name="Dinner">Dinner</string>
+    <string name="Recipe">Recipe</string>
+    <string name="Links_Of_interest">Links of interest</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
 </resources>
