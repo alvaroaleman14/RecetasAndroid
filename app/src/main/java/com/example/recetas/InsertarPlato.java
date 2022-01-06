@@ -37,7 +37,7 @@ public class InsertarPlato extends AppCompatActivity {
         List<Alergenos> Alergenos= new ArrayList<>();
 
 
-        Nombre=findViewById(R.id.editTextDishName);
+        //Nombre=findViewById(R.id.editTextDishName);
 
         //Queda por hacer
 
@@ -57,7 +57,7 @@ public class InsertarPlato extends AppCompatActivity {
 
 
         Dish dish = new Dish(InsertarPlato.this);
-        long id= dish.insertarPlato(Nombre.getText().toString(),Descripcion,Proteinas,Calorias,HidratosCarbono,Grasa,Alergenos,Restaurante,Tipo,Receta,Enlaces,Id_Restaurant);
+        //long id= dish.insertarPlato(Nombre.getText().toString(),Descripcion,Proteinas,Calorias,HidratosCarbono,Grasa,Alergenos,Restaurante,Tipo,Receta,Enlaces,Id_Restaurant);
 
     }
 }

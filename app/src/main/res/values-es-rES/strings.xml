@@ -18,4 +18,17 @@
     <string name="Dinner">Cena</string>
     <string name="Recipe">Receta</string>
     <string name="Links_Of_interest">Enlaces de interés</string>
+    <string name="Gluten">Gluten</string>
+    <string name="Egg">Huevo</string>
+    <string name="Fish">Pescado</string>
+    <string name="Dried_Fruit">Fruto seco</string>
+    <string name="Soy">Soja</string>
+    <string name="Dairy">Lácteos</string>
+    <string name="Mollusk">Molusco</string>
+    <string name="Mustard">Mostaza</string>
+    <string name="Celery">Apio</string>
+    <string name="Lupine">Altramuz</string>
+    <string name="Sesame">Sésamo</string>
+    <string name="Sulfur_Dioxide">Dióxido de azufre</string>
+    <string name="Crustacean">Crustáceo</string>
 </resources>
