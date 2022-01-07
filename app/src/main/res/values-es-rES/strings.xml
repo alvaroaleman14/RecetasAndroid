@@ -17,7 +17,6 @@
     <string name="Lunch">Almuerzo</string>
     <string name="Dinner">Cena</string>
     <string name="Recipe">Receta</string>
-    <string name="Links_Of_interest">Enlaces de interés</string>
     <string name="Gluten">Gluten</string>
     <string name="Egg">Huevo</string>
     <string name="Fish">Pescado</string>
@@ -31,4 +30,10 @@
     <string name="Sesame">Sésamo</string>
     <string name="Sulfur_Dioxide">Dióxido de azufre</string>
     <string name="Crustacean">Crustáceo</string>
+    <string name="Restaurant">Restaurante</string>
+    <string name="Address">Dirección</string>
+    <string name="Web">Página web</string>
+    <string name="Add">Añadir</string>
+    <string name="Cancel">Cancelar</string>
+    <string name="Link_Of_interest">Enlace de interés</string>
 </resources>

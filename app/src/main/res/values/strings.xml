@@ -16,7 +16,7 @@
     <string name="Lunch">Lunch</string>
     <string name="Dinner">Dinner</string>
     <string name="Recipe">Recipe</string>
-    <string name="Links_Of_interest">Links of interest</string>
+    <string name="Link_Of_interest">Link of interest</string>
     <string name="Gluten">Gluten</string>
     <string name="Crustacean">Crustacean</string>
     <string name="Egg">Egg</string>
@@ -30,6 +30,11 @@
     <string name="Lupine">Lupine</string>
     <string name="Sesame">Sesame</string>
     <string name="Sulfur_Dioxide">Sulfur dioxide</string>
+    <string name="Restaurant">Restaurant</string>
+    <string name="Address">Address</string>
+    <string name="Web">Web</string>
+    <string name="Add">Add</string>
+    <string name="Cancel">Cancel</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label" translatable="false">First Fragment</string>
     <string name="second_fragment_label" translatable="false">Second Fragment</string>
