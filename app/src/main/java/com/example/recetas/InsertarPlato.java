@@ -1,7 +1,9 @@
 package com.example.recetas;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.recetas.DB.Dish;
 import com.example.recetas.Enum.Alergenos;
@@ -31,6 +34,31 @@ public class InsertarPlato extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insertar_plato);
 
+        dishName = (EditText) findViewById(R.id.editTextDishName);
+        descriptionDish = (EditText) findViewById(R.id.editTextDescriptionDish);
+        protein = (EditText) findViewById(R.id.editTextProtein);
+        calorie = (EditText) findViewById(R.id.editTextCalorie);
+        carbohydrate = (EditText) findViewById(R.id.editTextCarbohydrate);
+        fat = (EditText) findViewById(R.id.editTextFat);
+
+        gluten = (CheckBox) findViewById(R.id.checkBoxGluten);
+        crustacean = (CheckBox) findViewById(R.id.checkBoxCrustacean);
+        egg = (CheckBox) findViewById(R.id.checkBoxEgg);
+        fish = (CheckBox) findViewById(R.id.checkBoxFish);
+        driedFruit = (CheckBox) findViewById(R.id.checkBoxDriedFruit);
+        soy = (CheckBox) findViewById(R.id.checkBoxSoy);
+        dairy = (CheckBox) findViewById(R.id.checkBoxDairy);
+        mollusk = (CheckBox) findViewById(R.id.checkBoxMollusk);
+        mustard = (CheckBox) findViewById(R.id.checkBoxMustard);
+        celery = (CheckBox) findViewById(R.id.checkBoxCelery);
+        lupine = (CheckBox) findViewById(R.id.checkBoxLupine);
+        sesame = (CheckBox) findViewById(R.id.checkBoxSesame);
+        sulfurDioxide = (CheckBox) findViewById(R.id.checkBoxSulfurDioxide);
+
+        addDish = (Button) findViewById(R.id.buttonAddDish);
+        cancel = (Button) findViewById(R.id.buttonCancelDish);
+
+        //ELEMENTOS QUE SE MOSTRARAN O NO DEPENDIENDO SI EL PLATO ES DE RESTAURANTE O NO
         tvRestauranName = (TextView) findViewById(R.id.textViewRestaurantName);
         tvRestauranName.setVisibility(View.GONE);
         restaurantName = (EditText) findViewById(R.id.editTextRestaurantName);
@@ -77,6 +105,25 @@ public class InsertarPlato extends AppCompatActivity {
                 }
             }
         });
+    }
+    //AÑADE EL PLATO
+    public void onClickAdd(View v){
+        AlertDialog.Builder builder = new AlertDialog.Builder(InsertarPlato.this);
+        builder.setPositiveButton(R.string.Ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                onClickCancel(v);
+                Toast.makeText(getApplicationContext(),R.string.AddDishSuccessfully,Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setNegativeButton(R.string.Cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+
+            }
+        });
+        builder.setTitle(R.string.AddDishMessageTitle);
+        builder.setMessage(R.string.AddDishMessage);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     //VUELVE A LA ACTIVIDAD PRINCIPAL

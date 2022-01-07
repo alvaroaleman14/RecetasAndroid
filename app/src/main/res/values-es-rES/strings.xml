@@ -36,4 +36,8 @@
     <string name="Add">Añadir</string>
     <string name="Cancel">Cancelar</string>
     <string name="Link_Of_interest">Enlace de interés</string>
+    <string name="Ok">Ok</string>
+    <string name="AddDishMessage">¿Esta seguro que desea añadir el plato?</string>
+    <string name="AddDishMessageTitle">Añadir plato</string>
+    <string name="AddDishSuccessfully">Plato añadido con éxito</string>
 </resources>
