@@ -51,10 +51,10 @@ public class GenerarMenu extends AppCompatActivity {
 
     }
         Bundle b = new Bundle();
-        b.putString(Name, "Prueba");
+       // b.putString(Name, "Prueba");
 
         Intent intento= new Intent(this, ListarPlatosMenu.class);
-        intento.putExtras(b);
+       // intento.putExtras(b);
         startActivity(intento);
     }
 }
