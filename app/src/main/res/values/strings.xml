@@ -39,6 +39,9 @@
     <string name="AddDishMessageTitle">Add Dish</string>
     <string name="AddDishMessage">Are you sure you want to add the dish?</string>
     <string name="AddDishSuccessfully">Dish added successfully</string>
+    <string name="AddDishError">Error adding plate.</string>
+    <string name="Error">Error</string>
+    <string name="ErrorMessageDishName">The name of the dish cannot be empty.</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label" translatable="false">First Fragment</string>
     <string name="second_fragment_label" translatable="false">Second Fragment</string>

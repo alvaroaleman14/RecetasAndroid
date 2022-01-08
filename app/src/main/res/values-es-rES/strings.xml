@@ -40,4 +40,7 @@
     <string name="AddDishMessage">¿Esta seguro que desea añadir el plato?</string>
     <string name="AddDishMessageTitle">Añadir plato</string>
     <string name="AddDishSuccessfully">Plato añadido con éxito</string>
+    <string name="Error">Error</string>
+    <string name="ErrorMessageDishName">El nombre del plato no puede estar vacío.</string>
+    <string name="AddDishError">Error al añadir plato.</string>
 </resources>

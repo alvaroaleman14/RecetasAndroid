@@ -154,10 +154,27 @@ public class InsertarPlato extends AppCompatActivity {
         dishName = this.dishName.getText().toString();
         descriptionDish = this.descriptionDish.getText().toString();
         linkInterest = this.linkInterest.getText().toString();
-        protein = Float.valueOf(this.protein.getText().toString());
-        calorie = Float.valueOf(this.calorie.getText().toString());
-        carbohydrate = Float.valueOf(this.carbohydrate.getText().toString());
-        fat = Float.valueOf(this.fat.getText().toString());
+
+        if (this.protein.getText().toString().length()>0){
+            protein = Float.valueOf(this.protein.getText().toString());
+        } else {
+            protein = 0;
+        }
+        if (this.calorie.getText().toString().length()>0){
+            calorie = Float.valueOf(this.calorie.getText().toString());
+        } else {
+            calorie = 0;
+        }
+        if (this.carbohydrate.getText().toString().length()>0){
+            carbohydrate = Float.valueOf(this.carbohydrate.getText().toString());
+        } else {
+            carbohydrate = 0;
+        }
+        if (this.fat.getText().toString().length()>0){
+            fat = Float.valueOf(this.fat.getText().toString());
+        } else {
+            fat = 0;
+        }
 
         if (this.gluten.isChecked()){allergens.add(Alergenos.Glutén);}
         if (this.crustacean.isChecked()){allergens.add(Alergenos.Crustaceos);}
@@ -187,12 +204,25 @@ public class InsertarPlato extends AppCompatActivity {
             isInRestaurant = false;
             recipe = this.recipe.getText().toString();
             linkInterest = this.linkInterest.getText().toString();
-            error= dish.insertarPlato(dishName,descriptionDish,protein,calorie,carbohydrate,fat,allergens,isInRestaurant,foodDay,recipe,linkInterest);
-            if (error != -1){
-                onClickCancel(view);
-                Toast.makeText(getApplicationContext(),R.string.AddDishSuccessfully,Toast.LENGTH_SHORT).show();
+            if (!dishName.equals("")){
+                error= dish.insertarPlato(dishName,descriptionDish,protein,calorie,carbohydrate,fat,allergens,isInRestaurant,foodDay,recipe,linkInterest);
+                if (error != -1) {
+                    onClickCancel(view);
+                    Toast.makeText(getApplicationContext(), R.string.AddDishSuccessfully, Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), R.string.AddDishError, Toast.LENGTH_SHORT).show();
+                }
             } else {
+                AlertDialog.Builder builder = new AlertDialog.Builder(InsertarPlato.this);
+                builder.setPositiveButton(R.string.Ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
 
+                    }
+                });
+                builder.setTitle(R.string.Error);
+                builder.setMessage(R.string.ErrorMessageDishName);
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         }
 

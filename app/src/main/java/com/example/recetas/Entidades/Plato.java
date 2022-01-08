@@ -25,7 +25,7 @@ public class Plato {
     private Float fat;
     private List<Alergenos> allergen;
     private Boolean is_restaurant;
-    private TipoComida type;
+    private List<TipoComida> type;
     private String recipe;
     private String URL;
     private Integer id_restaurant;
@@ -94,11 +94,11 @@ public class Plato {
         this.is_restaurant = is_restaurant;
     }
 
-    public TipoComida getType() {
+    public List<TipoComida> getType() {
         return type;
     }
 
-    public void setType(TipoComida type) {
+    public void setType(List<TipoComida> type) {
         this.type = type;
     }
 
