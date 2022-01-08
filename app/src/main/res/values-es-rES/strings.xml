@@ -43,4 +43,7 @@
     <string name="Error">Error</string>
     <string name="ErrorMessageDishName">El nombre del plato no puede estar vacío.</string>
     <string name="AddDishError">Error al añadir plato.</string>
+
+    <string name="Type">Tipo</string>
+    <string name="Category">Categoría</string>
 </resources>

@@ -50,4 +50,8 @@
 
     <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
     <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
+
+    <string name="Type">Type</string>
+    <string name="Category">Category</string>
+
 </resources>

@@ -15,13 +15,13 @@ public class GenerarMenu extends AppCompatActivity {
     CheckBox range1, range2, range3, gluten, crustacean, egg, fish, driedFruit, soy, dairy, mollusk, mustard, celery, lupine, sesame, sulfurDioxide;
     public final static String Name="Name";
     RecipeBook recipeBook;
-    SQLiteDatabase db = recipeBook.getReadableDatabase();
+//    SQLiteDatabase db = recipeBook.getReadableDatabase();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generar_menu);
-
+        /*
         gluten = (CheckBox) findViewById(R.id.glutenFree);
         crustacean = (CheckBox) findViewById(R.id.crust);
         egg = (CheckBox) findViewById(R.id.huevos);
@@ -37,24 +37,25 @@ public class GenerarMenu extends AppCompatActivity {
         sulfurDioxide = (CheckBox) findViewById(R.id.diox);
         range1 = (CheckBox) findViewById(R.id.range1);
         range2 = (CheckBox) findViewById(R.id.range2);
-        range3 = (CheckBox) findViewById(R.id.range3);
+        range3 = (CheckBox) findViewById(R.id.range3);*/
     }
 
 
     public void CrearMenu(View view) {
 
         //Faltan por pasar filtros
-        if (range1.isChecked()) {
+
+        /*if (range1.isChecked()) {
             String selection = RecipeBook.DishEntry.COLUMN_NAME_CALORIE + " = ?";
             String[] selectionArgs = new String[]{"1500-2500"};
         }
-
-    }
-        Bundle b = new Bundle();
-       // b.putString(Name, "Prueba");
+        Bundle b = new Bundle();*/
+        // b.putString(Name, "Prueba");
 
         Intent intento= new Intent(this, ListarPlatosMenu.class);
-       // intento.putExtras(b);
+        // intento.putExtras(b);
         startActivity(intento);
+
     }
+
 }

@@ -41,15 +41,16 @@ public class ListaPlatosAdapter extends RecyclerView.Adapter<ListaPlatosAdapter.
         //Completar con el resto de atributos
         holder.viewName.setText(listaPlatos.get(position).getName());
         holder.viewDescription.setText(listaPlatos.get(position).getDescription());
-        holder.viewProtein.setText(listaPlatos.get(position).getProtein().toString());
-        holder.viewFat.setText(listaPlatos.get(position).getFat().toString());
-        holder.viewCarbohydrate.setText(listaPlatos.get(position).getCarbohydrate().toString());
-        holder.viewCalorie.setText(listaPlatos.get(position).getCalorie().toString());
-        holder.viewCalorie.setText(listaPlatos.get(position).getCalorie().toString());
+        holder.viewProtein.setText(": "+listaPlatos.get(position).getProtein().toString());
+        holder.viewFat.setText(": "+listaPlatos.get(position).getFat().toString());
+        holder.viewCarbohydrate.setText(": "+listaPlatos.get(position).getCarbohydrate().toString());
+        holder.viewCalorie.setText(":"+listaPlatos.get(position).getCalorie().toString());
+        holder.viewCalorie.setText(": "+listaPlatos.get(position).getCalorie().toString());
         String AlergenosAux= listaPlatos.get(position).getAllergen().toString();
-        holder.viewAlergen.setText(AlergenosAux.substring(1,AlergenosAux.length()-1));
-        holder.viewIsRestaurant.setText(listaPlatos.get(position).getIs_restaurant() == true ? "Restaurante" : "Casero");
-        holder.viewType.setText(listaPlatos.get(position).getType().toString());
+        holder.viewAlergen.setText(": "+AlergenosAux.substring(1,AlergenosAux.length()-1));
+        holder.viewIsRestaurant.setText(listaPlatos.get(position).getIs_restaurant() == true ? ": Restaurante" : ": Casero");
+        String TipoAux= listaPlatos.get(position).getType().toString();
+        holder.viewType.setText(": "+TipoAux.substring(1,TipoAux.length()-1));
     }
 
 
@@ -78,6 +79,7 @@ public class ListaPlatosAdapter extends RecyclerView.Adapter<ListaPlatosAdapter.
         TextView viewAlergen;
         TextView viewIsRestaurant;
         TextView viewType;
+
 
 
         public PlatoViewHolder(@NonNull View itemView) {

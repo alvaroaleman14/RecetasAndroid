@@ -58,7 +58,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
-                        android:text="Proteinas:"/>
+                        android:text="@string/Protein" />
                     <TextView
                         android:id="@+id/viewProtein"
                         android:layout_width="wrap_content"
@@ -77,7 +77,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
-                        android:text="Grasa: "/>
+                        android:text="@string/Fat"/>
                     <TextView
                         android:id="@+id/viewFat"
                         android:layout_width="wrap_content"
@@ -95,7 +95,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
-                        android:text="Carbohidratos: "/>
+                        android:text="@string/Carbohydrate"/>
                     <TextView
                         android:id="@+id/viewCarbohydrate"
                         android:layout_width="wrap_content"
@@ -112,7 +112,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
-                        android:text="Calorías: "/>
+                        android:text="@string/Calorie"/>
                     <TextView
                         android:id="@+id/viewCalorie"
                         android:layout_width="wrap_content"
@@ -130,7 +130,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
-                        android:text="Alérgenos: "/>
+                        android:text="@string/Allergen"/>
                     <TextView
                         android:id="@+id/viewAlergen"
                         android:layout_width="wrap_content"
@@ -148,7 +148,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
-                        android:text="Categoria: "/>
+                        android:text="@string/Category"/>
                     <TextView
                         android:id="@+id/viewIsRestaurant"
                         android:layout_width="wrap_content"
@@ -167,7 +167,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
-                        android:text="Tipo: "/>
+                        android:text="@string/Type"/>
                     <TextView
                         android:id="@+id/viewType"
                         android:layout_width="wrap_content"

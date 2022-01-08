@@ -185,7 +185,7 @@ public class Dish extends RecipeBook {
                 String tipoComidaString = cursorPlatos.getString(9);
                 List<TipoComida> tipoComida;
                 if (tipoComidaString.equals("[]")){
-                    tipoComida = new ArrayList<>();
+                    tipoComida=new ArrayList<>() ;
                 } else {
                     String tipoComidaStringNoBrackets=tipoComidaString.substring(1,tipoComidaString.length()-1);
                     tipoComida = Arrays.asList(tipoComidaStringNoBrackets.split(",\\s+"))

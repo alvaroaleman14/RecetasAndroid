@@ -44,7 +44,7 @@ public class ListarPlatosMenu extends AppCompatActivity {
 
         Intent intento = getIntent();
         Bundle b = intento.getExtras();
-        String Nombre = b.getString(Name);
+//        String Nombre = b.getString(Name);
 
 
 
