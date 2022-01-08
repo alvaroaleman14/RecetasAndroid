@@ -1,7 +1,5 @@
 package com.example.recetas.DB;
 
-import static com.example.recetas.DB.RecipeBook.DishEntry.COLUMN_NAME_NAME;
-import static com.example.recetas.DB.RecipeBook.DishEntry.TABLE_NAME;
 import static com.example.recetas.DB.RecipeBook.RestaurantEntry.*;
 
 import android.content.ContentValues;
@@ -83,7 +81,7 @@ public class Restaurant extends RecipeBook {
             } else {
                 String selection = COLUMN_NAME_NAME + " = ?";
                 String argSelection[] = new String[]{name};
-                id = db.update(TABLE_NAME, values, selection, argSelection);
+                id = listRestaurantes.get(0).getId();
             }
 
             db.close();
