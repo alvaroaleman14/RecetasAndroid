@@ -10,10 +10,200 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="392dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="356dp"
         android:onClick="CrearMenu"
         android:text="Listar Menu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/glutenFree"
+        android:layout_width="84dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="60dp"
+        android:text="Gluten"
+        app:layout_constraintEnd_toStartOf="@+id/pescaro"
+        app:layout_constraintHorizontal_bias="0.612"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/crust"
+        android:layout_width="118dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="264dp"
+        android:layout_marginEnd="56dp"
+        android:text="Crustacean"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/huevos"
+        android:layout_width="78dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="60dp"
+        android:text="Egg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.289"
+        app:layout_constraintStart_toEndOf="@+id/soja"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/pescaro"
+        android:layout_width="81dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="60dp"
+        android:text="Fish"
+        app:layout_constraintEnd_toStartOf="@+id/soja"
+        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/soja"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="60dp"
+        android:text="Soy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.649"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/dfruit"
+        android:layout_width="136dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="28dp"
+        android:text="Dried Fruit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/dairy"
+        android:layout_width="85dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="136dp"
+        android:text="Dairy"
+        app:layout_constraintEnd_toStartOf="@+id/molusco"
+        app:layout_constraintHorizontal_bias="0.678"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/molusco"
+        android:layout_width="90dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="136dp"
+        android:text="Mollusk"
+        app:layout_constraintEnd_toStartOf="@+id/mostaza"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/mostaza"
+        android:layout_width="91dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="12dp"
+        android:text="Mustard"
+        app:layout_constraintEnd_toStartOf="@+id/celery"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/celery"
+        android:layout_width="77dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="28dp"
+        android:text="Celery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/lupine"
+        android:layout_width="93dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="200dp"
+        android:text="Lupine"
+        app:layout_constraintEnd_toStartOf="@+id/sesamo"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/sesamo"
+        android:layout_width="94dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="196dp"
+        android:text="Sesame"
+        app:layout_constraintEnd_toStartOf="@+id/dfruit"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/diox"
+        android:layout_width="144dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="264dp"
+        android:text="Sulfur Dioxide"
+        app:layout_constraintEnd_toStartOf="@+id/crust"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/caloriesId"
+        android:layout_width="78dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Calories"
+        app:layout_constraintBottom_toTopOf="@+id/range1"
+        tools:layout_editor_absoluteX="35dp" />
+
+    <CheckBox
+        android:id="@+id/range1"
+        android:layout_width="110dp"
+        android:layout_height="46dp"
+        android:text="1500-2500"
+        app:layout_constraintBottom_toTopOf="@+id/range2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/range2"
+        android:layout_width="111dp"
+        android:layout_height="44dp"
+        android:text="2500-3500"
+        app:layout_constraintBottom_toTopOf="@+id/range3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/range3"
+        android:layout_width="111dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="112dp"
+        android:text="3500-5000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
