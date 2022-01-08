@@ -22,16 +22,16 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Restaurant extends RecipeBook{
+public class Restaurant extends RecipeBook {
 
     Context context;
 
-    public Restaurant(@Nullable Context context){
+    public Restaurant(@Nullable Context context) {
         super(context);
-        this.context=context;
+        this.context = context;
     }
 
-     public List<Restaurante> conseguirRestaurante(String name){
+    public List<Restaurante> conseguirRestaurante(String name) {
 
         SQLiteDatabase db = RecipeBook.getInstancia(context).getWritableDatabase();
         String selection = COLUMN_NAME_NAME + " LIKE ?";
@@ -43,9 +43,9 @@ public class Restaurant extends RecipeBook{
         Restaurante restaurante;
         List<Restaurante> listRestaurant = new LinkedList<>();
 
-        if(cursor.moveToFirst()){
-            do{
-                restaurante= new Restaurante();
+        if (cursor.moveToFirst()) {
+            do {
+                restaurante = new Restaurante();
                 restaurante.setId(cursor.getInt(0));
                 restaurante.setName(cursor.getString(1));
                 restaurante.setAddress(cursor.getString(2));
@@ -53,47 +53,44 @@ public class Restaurant extends RecipeBook{
 
                 listRestaurant.add(restaurante);
 
-            }while(cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
         cursor.close();
         db.close();
         return listRestaurant;
     }
 
-    public long insertarRestaurante(String name, String address, String web){
+    public long insertarRestaurante(String name, String address, String web) {
 
-        long error = 0;
+        long id = 0;
 
 
         List<Restaurante> listRestaurantes = conseguirRestaurante(name);
 
-        try{
+        try {
 
             RecipeBook recipeBook = RecipeBook.getInstancia(context);
             SQLiteDatabase db = recipeBook.getWritableDatabase();
 
-            ContentValues values= new ContentValues();
-            values.put(COLUMN_NAME_NAME,name);
-            values.put(COLUMN_NAME_ADDRESS,address);
-            values.put(COLUMN_NAME_WEB,web);
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_NAME_NAME, name);
+            values.put(COLUMN_NAME_ADDRESS, address);
+            values.put(COLUMN_NAME_WEB, web);
 
 
-            if (listRestaurantes == null || listRestaurantes.isEmpty()){
-                error = db.insert(TABLE_NAME,null,values);
+            if (listRestaurantes == null || listRestaurantes.isEmpty()) {
+                id = db.insert(TABLE_NAME, null, values);
             } else {
                 String selection = COLUMN_NAME_NAME + " = ?";
                 String argSelection[] = new String[]{name};
-                error = db.update(TABLE_NAME, values, selection, argSelection);
+                id = db.update(TABLE_NAME, values, selection, argSelection);
             }
 
             db.close();
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.toString();
         }
 
-        return error;
+        return id;
     }
-
-
-
 }

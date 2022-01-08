@@ -32,11 +32,11 @@ public class Dish extends RecipeBook {
     public List<Plato> conseguirPLato(String name){
 
         SQLiteDatabase db = RecipeBook.getInstancia(context).getWritableDatabase();
-        String selection = COLUMN_NAME_NAME + " LIKE ?";
+        String selection = DishEntry.COLUMN_NAME_NAME + " LIKE ?";
         String argSelection[] = new String[]{name + "%"};
-        String orderBy = COLUMN_NAME_NAME + " COLLATE NOCASE ASC";
+        String orderBy = DishEntry.COLUMN_NAME_NAME + " COLLATE NOCASE ASC";
 
-        Cursor cursor = db.query(TABLE_NAME, null, selection, argSelection, null, null, orderBy);
+        Cursor cursor = db.query(DishEntry.TABLE_NAME, null, selection, argSelection, null, null, orderBy);
 
         Plato plato;
         List<Plato> listDish = new LinkedList<>();
@@ -96,9 +96,9 @@ public class Dish extends RecipeBook {
 
 
     //INSERTA O ACTUALIZA UN PLATO
-    public long insertarPlato(String name, String description , Float protein, Float calorie, Float carbohydrate, Float fat, List<Alergenos> allergen,Boolean is_restaurant, List<TipoComida> type, String recipe, String URL){
+    public long insertarPlato(String name, String description , Float protein, Float calorie, Float carbohydrate, Float fat, List<Alergenos> allergen,Boolean is_restaurant, List<TipoComida> type, String recipe, String URL, Integer id_Restaurant){
 
-        long error = 0;
+        long id = 0;
         List<Plato> listDish = conseguirPLato(name);
 
         try{
@@ -107,7 +107,7 @@ public class Dish extends RecipeBook {
             SQLiteDatabase db = recipeBook.getWritableDatabase();
 
             ContentValues values= new ContentValues();
-            values.put(COLUMN_NAME_NAME,name);
+            values.put(DishEntry.COLUMN_NAME_NAME,name);
             values.put(COLUMN_NAME_DESCRIPTION,description);
             values.put(COLUMN_NAME_PROTEIN,protein);
             values.put(COLUMN_NAME_CALORIE,calorie);
@@ -118,20 +118,21 @@ public class Dish extends RecipeBook {
             values.put(COLUMN_NAME_TYPE,type.toString());
             values.put(COLUMN_NAME_RECIPE,recipe);
             values.put(COLUMN_NAME_URL,URL);
+            values.put(COLUMN_NAME_ID_RESTAURANT,id_Restaurant);
 
             if (listDish == null || listDish.isEmpty()){
-                error = db.insert(TABLE_NAME,null,values);
+                id = db.insert(DishEntry.TABLE_NAME,null,values);
             } else {
-                String selection = COLUMN_NAME_NAME + " = ?";
+                String selection = DishEntry.COLUMN_NAME_NAME + " = ?";
                 String argSelection[] = new String[]{name};
-                error = db.update(TABLE_NAME, values, selection, argSelection);
+                id = db.update(DishEntry.TABLE_NAME, values, selection, argSelection);
             }
             db.close();
         }catch (Exception ex){
             ex.toString();
         }
 
-        return error;
+        return id;
     }
 
 
@@ -144,7 +145,7 @@ public class Dish extends RecipeBook {
         Plato plato;
         Cursor cursorPlatos;
 
-        cursorPlatos = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        cursorPlatos = db.rawQuery("SELECT * FROM " + DishEntry.TABLE_NAME, null);
 
 
         if(cursorPlatos.moveToFirst()){

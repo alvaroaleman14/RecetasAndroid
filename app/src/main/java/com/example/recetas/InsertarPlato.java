@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -15,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.recetas.DB.Dish;
+import com.example.recetas.DB.Restaurant;
+import com.example.recetas.Entidades.Restaurante;
 import com.example.recetas.Enum.Alergenos;
 import com.example.recetas.Enum.TipoComida;
 
@@ -80,6 +84,34 @@ public class InsertarPlato extends AppCompatActivity {
         tvLinkInterest = (TextView) findViewById(R.id.textViewLinkInterest);
         linkInterest = (EditText) findViewById(R.id.editLinkInterest);
 
+        restaurantName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length()>0) {
+                    Restaurant restaurant = new Restaurant(InsertarPlato.this);
+                    List<Restaurante> lookForRestaurant = restaurant.conseguirRestaurante(editable.toString());
+                    if (!lookForRestaurant.isEmpty()) {
+                        address.setText(lookForRestaurant.get(0).getAddress());
+                        web.setText(lookForRestaurant.get(0).getWeb());
+                    } else {
+                        address.setText("");
+                        web.setText("");
+                    }
+                }
+
+            }
+        });
+
         isInRestaurant = (Switch) findViewById(R.id.switchIsInRestaurant);
         isInRestaurant.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +127,7 @@ public class InsertarPlato extends AppCompatActivity {
                     recipe.setVisibility(View.GONE);
                     tvLinkInterest.setVisibility(View.GONE);
                     linkInterest.setVisibility(View.GONE);
+
                 } else {
                     tvRestaurantName.setVisibility(View.GONE);
                     restaurantName.setVisibility(View.GONE);
@@ -146,7 +179,7 @@ public class InsertarPlato extends AppCompatActivity {
         float protein, calorie, carbohydrate, fat;
         boolean isInRestaurant;
 
-        long error;
+        long idDish;
 
         //RESTAURANTE
         String restaurantName, address, web;
@@ -195,18 +228,58 @@ public class InsertarPlato extends AppCompatActivity {
         if (this.dinner.isChecked()){foodDay.add(TipoComida.Cena);}
 
         Dish dish = new Dish(InsertarPlato.this);
+        Restaurant restaurant = new Restaurant(InsertarPlato.this);
         if (this.isInRestaurant.isChecked()) {
             isInRestaurant = true;
             restaurantName = this.restaurantName.getText().toString();
             address = this.address.getText().toString();
             web = this.web.getText().toString();
+            long idRestaurant;
+            if (!restaurantName.equals("")){
+                idRestaurant= restaurant.insertarRestaurante(restaurantName,address,web);
+                if (idRestaurant != -1) {
+                    if (!dishName.equals("")){
+                        idDish = dish.insertarPlato(dishName,descriptionDish,protein,calorie,carbohydrate,fat,allergens,isInRestaurant,foodDay,"","", (int) idRestaurant);
+                        if (idDish != -1) {
+                            onClickCancel(view);
+                            Toast.makeText(getApplicationContext(), R.string.AddDishSuccessfully, Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getApplicationContext(), R.string.AddDishError, Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(InsertarPlato.this);
+                        builder.setPositiveButton(R.string.Ok, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+                            }
+                        });
+                        builder.setTitle(R.string.Error);
+                        builder.setMessage(R.string.ErrorMessageDishName);
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), R.string.AddRestaurantError, Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                AlertDialog.Builder builder = new AlertDialog.Builder(InsertarPlato.this);
+                builder.setPositiveButton(R.string.Ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+                builder.setTitle(R.string.Error);
+                builder.setMessage(R.string.ErrorMessageRestaurantName);
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
         } else {
             isInRestaurant = false;
             recipe = this.recipe.getText().toString();
             linkInterest = this.linkInterest.getText().toString();
             if (!dishName.equals("")){
-                error= dish.insertarPlato(dishName,descriptionDish,protein,calorie,carbohydrate,fat,allergens,isInRestaurant,foodDay,recipe,linkInterest);
-                if (error != -1) {
+                idDish = dish.insertarPlato(dishName,descriptionDish,protein,calorie,carbohydrate,fat,allergens,isInRestaurant,foodDay,recipe,linkInterest,null);
+                if (idDish != -1) {
                     onClickCancel(view);
                     Toast.makeText(getApplicationContext(), R.string.AddDishSuccessfully, Toast.LENGTH_SHORT).show();
                 } else {

@@ -1,11 +1,9 @@
 package com.example.recetas.Entidades;
 
 public class Restaurante {
-    private Integer id;
-    private String name;
-    private String address;
-    private String web;
 
+    private Integer id;
+    private String name, address, web;
 
     public Integer getId() {
         return id;
