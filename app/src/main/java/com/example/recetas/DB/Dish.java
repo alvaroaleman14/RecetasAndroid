@@ -27,7 +27,7 @@ public class Dish extends RecipeBook {
         this.context=context;
     }
 
-    public long insertarPlato(String name, String description , Float protein, Float calorie, Float carbohydrate, Float fat, List<Alergenos> allergen,Boolean is_restaurant, TipoComida type, String recipe, String URL, Integer id_restaurant){
+    public long insertarPlato(String name, String description , Float protein, Float calorie, Float carbohydrate, Float fat, List<Alergenos> allergen,Boolean is_restaurant, List<TipoComida> type, String recipe, String URL){
 
 
         long id = 0;
@@ -50,7 +50,7 @@ public class Dish extends RecipeBook {
             values.put("type",type.toString());
             values.put("recipe",recipe);
             values.put("url",URL);
-            values.put("id_restaurant",id_restaurant);
+
 
             id = db.insert(TABLE_NAME,null,values);
 

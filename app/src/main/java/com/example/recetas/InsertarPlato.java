@@ -24,10 +24,10 @@ import java.util.List;
 public class InsertarPlato extends AppCompatActivity {
 
     EditText dishName, descriptionDish, protein, calorie, carbohydrate, fat, restaurantName, address, web, recipe, linkInterest;
-    CheckBox gluten, crustacean, egg, fish, driedFruit, soy, dairy, mollusk, mustard, celery, lupine, sesame, sulfurDioxide;
+    CheckBox breakfast, lunch, dinner, gluten, crustacean, egg, fish, driedFruit, soy, dairy, mollusk, mustard, celery, lupine, sesame, sulfurDioxide;
     Button addDish, cancel;
     Switch isInRestaurant;
-    TextView tvRestauranName, tvAddress, tvWeb, tvRecipe, tvLinkInterest;
+    TextView tvRestaurantName, tvAddress, tvWeb, tvRecipe, tvLinkInterest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,10 @@ public class InsertarPlato extends AppCompatActivity {
         calorie = (EditText) findViewById(R.id.editTextCalorie);
         carbohydrate = (EditText) findViewById(R.id.editTextCarbohydrate);
         fat = (EditText) findViewById(R.id.editTextFat);
+
+        breakfast = (CheckBox) findViewById(R.id.checkBoxBreakfast);
+        lunch = (CheckBox) findViewById(R.id.checkBoxLunch);
+        dinner = (CheckBox) findViewById(R.id.checkBoxDinner);
 
         gluten = (CheckBox) findViewById(R.id.checkBoxGluten);
         crustacean = (CheckBox) findViewById(R.id.checkBoxCrustacean);
@@ -59,8 +63,8 @@ public class InsertarPlato extends AppCompatActivity {
         cancel = (Button) findViewById(R.id.buttonCancelDish);
 
         //ELEMENTOS QUE SE MOSTRARAN O NO DEPENDIENDO SI EL PLATO ES DE RESTAURANTE O NO
-        tvRestauranName = (TextView) findViewById(R.id.textViewRestaurantName);
-        tvRestauranName.setVisibility(View.GONE);
+        tvRestaurantName = (TextView) findViewById(R.id.textViewRestaurantName);
+        tvRestaurantName.setVisibility(View.GONE);
         restaurantName = (EditText) findViewById(R.id.editTextRestaurantName);
         restaurantName.setVisibility(View.GONE);
         tvAddress = (TextView) findViewById(R.id.textViewAddress);
@@ -81,7 +85,7 @@ public class InsertarPlato extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (isInRestaurant.isChecked()){
-                    tvRestauranName.setVisibility(View.VISIBLE);
+                    tvRestaurantName.setVisibility(View.VISIBLE);
                     restaurantName.setVisibility(View.VISIBLE);
                     tvAddress.setVisibility(View.VISIBLE);
                     address.setVisibility(View.VISIBLE);
@@ -92,7 +96,7 @@ public class InsertarPlato extends AppCompatActivity {
                     tvLinkInterest.setVisibility(View.GONE);
                     linkInterest.setVisibility(View.GONE);
                 } else {
-                    tvRestauranName.setVisibility(View.GONE);
+                    tvRestaurantName.setVisibility(View.GONE);
                     restaurantName.setVisibility(View.GONE);
                     tvAddress.setVisibility(View.GONE);
                     address.setVisibility(View.GONE);
@@ -106,13 +110,13 @@ public class InsertarPlato extends AppCompatActivity {
             }
         });
     }
+
     //AÑADE EL PLATO
     public void onClickAdd(View v){
         AlertDialog.Builder builder = new AlertDialog.Builder(InsertarPlato.this);
         builder.setPositiveButton(R.string.Ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                onClickCancel(v);
-                Toast.makeText(getApplicationContext(),R.string.AddDishSuccessfully,Toast.LENGTH_SHORT).show();
+                setAddDish(v);
             }
         });
         builder.setNegativeButton(R.string.Cancel, new DialogInterface.OnClickListener() {
@@ -133,42 +137,64 @@ public class InsertarPlato extends AppCompatActivity {
         finish();
     }
 
-    public void CrearPrueba(View view){
+    //OBTIENE LOS VALORES DEL FORMULARIO PARA INSERTARLOS
+    public void setAddDish(View view){
+        //PLATO
+        String dishName, descriptionDish, recipe, linkInterest;
+        List<Alergenos> allergens = new ArrayList<>();
+        List<TipoComida> foodDay = new ArrayList<>();
+        float protein, calorie, carbohydrate, fat;
+        boolean isInRestaurant;
 
+        long error;
 
+        //RESTAURANTE
+        String restaurantName, address, web;
 
-        EditText Nombre;
-        String Descripcion, Receta, Enlaces;
-        float Proteinas, Calorias, HidratosCarbono, Grasa;
-        boolean Restaurante;
-        TipoComida Tipo;
-        Integer Id_Restaurant;
+        dishName = this.dishName.getText().toString();
+        descriptionDish = this.descriptionDish.getText().toString();
+        linkInterest = this.linkInterest.getText().toString();
+        protein = Float.valueOf(this.protein.getText().toString());
+        calorie = Float.valueOf(this.calorie.getText().toString());
+        carbohydrate = Float.valueOf(this.carbohydrate.getText().toString());
+        fat = Float.valueOf(this.fat.getText().toString());
 
+        if (this.gluten.isChecked()){allergens.add(Alergenos.Glutén);}
+        if (this.crustacean.isChecked()){allergens.add(Alergenos.Crustaceos);}
+        if (this.egg.isChecked()){allergens.add(Alergenos.Huevo);}
+        if (this.fish.isChecked()){allergens.add(Alergenos.Pescado);}
+        if (this.driedFruit.isChecked()){allergens.add(Alergenos.Frutos_Secos);}
+        if (this.soy.isChecked()){allergens.add(Alergenos.Soja);}
+        if (this.dairy.isChecked()){allergens.add(Alergenos.Lacteos);}
+        if (this.mollusk.isChecked()){allergens.add(Alergenos.Moluscos);}
+        if (this.mustard.isChecked()){allergens.add(Alergenos.Mostaza);}
+        if (this.celery.isChecked()){allergens.add(Alergenos.Apio);}
+        if (this.lupine.isChecked()){allergens.add(Alergenos.Altramuces);}
+        if (this.sesame.isChecked()){allergens.add(Alergenos.Sesamo);}
+        if (this.sulfurDioxide.isChecked()){allergens.add(Alergenos.Dióxido_De_Azufre);}
 
-        List<Alergenos> Alergenos= new ArrayList<>();
-
-
-        //Nombre=findViewById(R.id.editTextDishName);
-
-        //Queda por hacer
-
-        Alergenos.add(com.example.recetas.Enum.Alergenos.Apio);
-        Alergenos.add(com.example.recetas.Enum.Alergenos.Mostaza);
-        Descripcion="Descripcion";
-        Proteinas= new Float(2.2);
-        Calorias=new Float(2.4);
-        HidratosCarbono=new Float(2.2);
-        Grasa= new Float(2.2);
-        Restaurante= false;
-        Tipo= TipoComida.Desayuno;
-        Receta= "Receta";
-        Enlaces= "Enlaces";
-        Id_Restaurant=null;
-
-
+        if (this.breakfast.isChecked()){foodDay.add(TipoComida.Desayuno);}
+        if (this.lunch.isChecked()){foodDay.add(TipoComida.Almuerzo);}
+        if (this.dinner.isChecked()){foodDay.add(TipoComida.Cena);}
 
         Dish dish = new Dish(InsertarPlato.this);
-        //long id= dish.insertarPlato(Nombre.getText().toString(),Descripcion,Proteinas,Calorias,HidratosCarbono,Grasa,Alergenos,Restaurante,Tipo,Receta,Enlaces,Id_Restaurant);
+        if (this.isInRestaurant.isChecked()) {
+            isInRestaurant = true;
+            restaurantName = this.restaurantName.getText().toString();
+            address = this.address.getText().toString();
+            web = this.web.getText().toString();
+        } else {
+            isInRestaurant = false;
+            recipe = this.recipe.getText().toString();
+            linkInterest = this.linkInterest.getText().toString();
+            error= dish.insertarPlato(dishName,descriptionDish,protein,calorie,carbohydrate,fat,allergens,isInRestaurant,foodDay,recipe,linkInterest);
+            if (error != -1){
+                onClickCancel(view);
+                Toast.makeText(getApplicationContext(),R.string.AddDishSuccessfully,Toast.LENGTH_SHORT).show();
+            } else {
+
+            }
+        }
 
     }
 }

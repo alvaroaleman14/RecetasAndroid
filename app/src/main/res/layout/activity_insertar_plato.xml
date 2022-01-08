@@ -157,6 +157,52 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewFat" />
 
         <TextView
+            android:id="@+id/textViewFoodDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/Food_day"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextFat" />
+
+        <CheckBox
+            android:id="@+id/checkBoxBreakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/Breakfast"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.047"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewFoodDay" />
+
+        <CheckBox
+            android:id="@+id/checkBoxLunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="4dp"
+            android:text="@string/Lunch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/checkBoxBreakfast"
+            app:layout_constraintTop_toBottomOf="@+id/textViewFoodDay" />
+
+        <CheckBox
+            android:id="@+id/checkBoxDinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="4dp"
+            android:text="@string/Dinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/checkBoxLunch"
+            app:layout_constraintTop_toBottomOf="@+id/textViewFoodDay" />
+
+        <TextView
             android:id="@+id/textViewAllergen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -165,7 +211,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.045"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextFat" />
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxBreakfast" />
 
         <CheckBox
             android:id="@+id/checkBoxGluten"
