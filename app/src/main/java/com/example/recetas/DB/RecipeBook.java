@@ -28,6 +28,7 @@ public class RecipeBook extends SQLiteOpenHelper {
 
     public static class RestaurantEntry implements BaseColumns {
         public static final String TABLE_NAME = "restaurant";
+        public static final String COLUMN_NAME_ID = "_id";
         public static final String COLUMN_NAME_NAME = "name";
         public static final String COLUMN_NAME_ADDRESS = "address";
         public static final String COLUMN_NAME_WEB = "web";

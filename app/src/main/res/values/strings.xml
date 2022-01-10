@@ -77,4 +77,10 @@
 
     <string name="ViewMoreDetails">View More</string>
 
+    <string name="RestaurantName">Restaurant Name</string>
+    <string name="RestaurantAddress">Restaurant Address</string>
+    <string name="RestaurantWeb">Web of the restaurant</string>
+
+    <string name="URL">URL</string>
+
 </resources>

@@ -58,6 +58,35 @@ public class Restaurant extends RecipeBook {
         return listRestaurant;
     }
 
+    public Restaurante conseguirRestauranteId(int id) {
+
+        SQLiteDatabase db = RecipeBook.getInstancia(context).getWritableDatabase();
+        String selection = COLUMN_NAME_ID + " LIKE ?";
+        String argSelection[] = new String[]{id + "%"};
+        String orderBy = COLUMN_NAME_ID + " COLLATE NOCASE ASC";
+
+        Cursor cursor = db.query(TABLE_NAME, null, selection, argSelection, null, null, orderBy);
+
+        Restaurante restaurante;
+        List<Restaurante> listRestaurant = new LinkedList<>();
+
+        if (cursor.moveToFirst()) {
+            do {
+                restaurante = new Restaurante();
+                restaurante.setId(cursor.getInt(0));
+                restaurante.setName(cursor.getString(1));
+                restaurante.setAddress(cursor.getString(2));
+                restaurante.setWeb(cursor.getString(3));
+
+                listRestaurant.add(restaurante);
+
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return listRestaurant.get(0);
+    }
+
     public long insertarRestaurante(String name, String address, String web) {
 
         long id = 0;
