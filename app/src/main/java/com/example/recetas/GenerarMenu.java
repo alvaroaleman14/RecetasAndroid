@@ -1,8 +1,10 @@
 package com.example.recetas;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -44,16 +46,33 @@ public class GenerarMenu extends AppCompatActivity {
         sulfurDioxide = (CheckBox) findViewById(R.id.diox);
 
         //RadioGroups
-        calorias = (RadioGroup) findViewById(R.id.caloriasgroup);
-        grasas = (RadioGroup) findViewById(R.id.grasasgroup);
-        proteinas = (RadioGroup) findViewById(R.id.proteinagroup);
-        carboh = (RadioGroup) findViewById(R.id.proteinagroup);
-        categoria = (RadioGroup) findViewById(R.id.categoriagroup);
+        calorias = (RadioGroup) findViewById(R.id.RadioGroupCalorie);
+        grasas = (RadioGroup) findViewById(R.id.RadioGroupFat);
+        proteinas = (RadioGroup) findViewById(R.id.RadioGroupProtein);
+        carboh = (RadioGroup) findViewById(R.id.RadioGroupCarbohydrate);
+        categoria = (RadioGroup) findViewById(R.id.RadioGroupCategory);
 
     }
 
+    public void onClickListMenu(View v){
+        AlertDialog.Builder builder = new AlertDialog.Builder(GenerarMenu.this);
+        builder.setPositiveButton(R.string.Ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                crearMenu(v);
+            }
+        });
+        builder.setNegativeButton(R.string.Cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
 
-    public void CrearMenu(View view) {
+            }
+        });
+        builder.setTitle(R.string.ListMenuMessageTitle);
+        builder.setMessage(R.string.ListMenuMessage);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    public void crearMenu(View view) {
 
         List<Alergenos> alergenos = new ArrayList<>();
 
