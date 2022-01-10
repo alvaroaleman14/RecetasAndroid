@@ -106,6 +106,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <RadioGroup
+            android:id="@+id/caloriasgroup"
             android:layout_width="115dp"
             android:layout_height="137dp"
             tools:layout_editor_absoluteX="32dp"
@@ -292,6 +293,7 @@
             tools:ignore="TouchTargetSizeCheck" />
 
         <RadioGroup
+            android:id="@+id/categoriagroup"
             android:layout_width="118dp"
             android:layout_height="90dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -312,10 +314,11 @@
         </RadioGroup>
 
         <RadioGroup
+            android:id="@+id/proteinagroup"
             android:layout_width="102dp"
             android:layout_height="142dp"
             tools:layout_editor_absoluteX="156dp"
-            tools:layout_editor_absoluteY="362dp" >
+            tools:layout_editor_absoluteY="362dp">
 
             <RadioButton
                 android:id="@+id/rango1prot"
@@ -337,10 +340,11 @@
         </RadioGroup>
 
         <RadioGroup
+            android:id="@+id/grasasgroup"
             android:layout_width="113dp"
             android:layout_height="138dp"
             tools:layout_editor_absoluteX="276dp"
-            tools:layout_editor_absoluteY="363dp" >
+            tools:layout_editor_absoluteY="363dp">
 
             <RadioButton
                 android:id="@+id/rango1fat"
@@ -362,10 +366,11 @@
         </RadioGroup>
 
         <RadioGroup
+            android:id="@+id/carbogroup"
             android:layout_width="103dp"
             android:layout_height="125dp"
             tools:layout_editor_absoluteX="32dp"
-            tools:layout_editor_absoluteY="552dp" >
+            tools:layout_editor_absoluteY="552dp">
 
             <RadioButton
                 android:id="@+id/rango1carb"

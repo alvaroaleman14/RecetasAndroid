@@ -6,6 +6,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.RadioButton;
 
 import androidx.annotation.Nullable;
 
@@ -212,6 +213,72 @@ public class Dish extends RecipeBook {
 
         return listaPlatos;
 
+    }
+
+    public List<Plato> consigueMenu(List list, RadioButton radiocal,RadioButton radioprot, RadioButton radiofat,RadioButton radiocarb,RadioButton casrest){
+
+        SQLiteDatabase db = RecipeBook.getInstancia(context).getWritableDatabase();
+        String selection = COLUMN_NAME_CALORIE + " BETWEEN ? AND ?";
+
+        String argSelection[] = new String[]{"0","1500"};
+        String orderBy = DishEntry.COLUMN_NAME_NAME + " COLLATE NOCASE ASC";
+
+        Cursor cursor = db.query(DishEntry.TABLE_NAME, null, selection, argSelection, null, null, orderBy);
+
+        Plato plato;
+        List<Plato> listDish = new LinkedList<>();
+
+        if(cursor.moveToFirst()){
+            do{
+                plato= new Plato();
+                plato.setId(cursor.getInt(0));
+                plato.setName(cursor.getString(1));
+                plato.setDescription(cursor.getString(2));
+                plato.setProtein(cursor.getFloat(3));
+                plato.setFat(cursor.getFloat(4));
+                plato.setCarbohydrate(cursor.getFloat(5));
+                plato.setCalorie(cursor.getFloat(6));
+
+                //Alérgenos
+                String alergenosString= cursor.getString(7);
+                List<Alergenos> alergenos;
+                if(alergenosString.equals("[]")){
+                    alergenos=new ArrayList<>();
+                }else{
+                    String alergenosStringNoBrackets=alergenosString.substring(1,alergenosString.length()-1);
+                    alergenos = Arrays.asList(alergenosStringNoBrackets.split(",\\s+"))
+                            .stream()
+                            .map(Alergenos::valueOf)
+                            .collect(Collectors.toList());
+                }
+                plato.setAllergen(alergenos);
+                plato.setIs_restaurant(Boolean.valueOf(cursor.getString(8)));
+
+                //Tipo Comida
+                String tipoComidaString = cursor.getString(9);
+                List<TipoComida> tipoComida;
+                if (tipoComidaString.equals("[]")){
+                    tipoComida = new ArrayList<>();
+                } else {
+                    String tipoComidaStringNoBrackets=tipoComidaString.substring(1,tipoComidaString.length()-1);
+                    tipoComida = Arrays.asList(tipoComidaStringNoBrackets.split(",\\s+"))
+                            .stream()
+                            .map(TipoComida::valueOf)
+                            .collect(Collectors.toList());
+                }
+                plato.setType(tipoComida);
+
+                plato.setRecipe(cursor.getString(10));
+                plato.setURL(cursor.getString(11));
+                plato.setId_restaurant(cursor.getInt(12));
+
+                listDish.add(plato);
+
+            }while(cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return listDish;
     }
 
 
