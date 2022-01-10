@@ -56,4 +56,7 @@
     <string name="Type">Type</string>
     <string name="Category">Category</string>
 
+    <string name="Homemade">HomeMade</string>
+    <string name="list_menu">List Menu</string>
+
 </resources>
