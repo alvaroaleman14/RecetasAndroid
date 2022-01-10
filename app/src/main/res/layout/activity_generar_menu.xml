@@ -15,67 +15,26 @@
         tools:context=".InsertarPlato">
 
 
-        <EditText
-            android:id="@+id/caloriesId4"
-            android:layout_width="78dp"
+        <CheckBox
+            android:id="@+id/soja"
+            android:layout_width="80dp"
             android:layout_height="48dp"
-            android:layout_marginStart="268dp"
-            android:layout_marginTop="383dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/Fat"
+            android:layout_marginStart="188dp"
+            android:layout_marginTop="80dp"
+            android:text="@string/Soy"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/caloriesId8"
-            android:layout_width="116dp"
-            android:layout_height="48dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/Category"
-            tools:layout_editor_absoluteX="276dp"
-            tools:layout_editor_absoluteY="608dp" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="CrearMenu"
-            android:text="@string/list_menu"
-            tools:layout_editor_absoluteX="132dp"
-            tools:layout_editor_absoluteY="706dp" />
 
         <CheckBox
-            android:id="@+id/range3"
-            android:layout_width="103dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="527dp"
-            android:text="2500>"
+            android:id="@+id/lupine"
+            android:layout_width="93dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="216dp"
+            android:text="@string/Lupine"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="110dp"
-            android:layout_height="48dp"
-            android:text="@string/Homemade"
-            tools:layout_editor_absoluteX="276dp"
-            tools:layout_editor_absoluteY="705dp" />
-
-        <EditText
-            android:id="@+id/editTextDishDescription"
-            android:layout_width="390dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="52dp"
-            android:ems="10"
-            android:hint="@string/Description_Dish"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
             android:id="@+id/caloriesId7"
@@ -84,225 +43,26 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:text="@string/Type"
-            tools:layout_editor_absoluteX="147dp"
-            tools:layout_editor_absoluteY="585dp" />
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="506dp" />
 
         <CheckBox
-            android:id="@+id/checkBox3"
+            android:id="@+id/checkBox2"
             android:layout_width="96dp"
             android:layout_height="48dp"
-            android:text="@string/Dinner"
-            tools:layout_editor_absoluteX="147dp"
-            tools:layout_editor_absoluteY="674dp" />
-
-        <CheckBox
-            android:id="@+id/range9"
-            android:layout_width="102dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="628dp"
-            android:text="1500-2500"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="110dp"
-            android:layout_height="48dp"
-            android:text="@string/Restaurant"
-            tools:layout_editor_absoluteX="276dp"
-            tools:layout_editor_absoluteY="656dp" />
+            android:text="@string/Lunch"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="571dp" />
 
         <EditText
-            android:id="@+id/caloriesId2"
-            android:layout_width="78dp"
+            android:id="@+id/caloriesId5"
+            android:layout_width="116dp"
             android:layout_height="48dp"
-            android:layout_marginStart="176dp"
-            android:layout_marginTop="108dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="504dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/Allergen"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/sesamo"
-            android:layout_width="94dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="180dp"
-            android:layout_marginTop="259dp"
-            android:text="@string/Sesame"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <CheckBox
-            android:id="@+id/pescaro"
-            android:layout_width="81dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="156dp"
-            android:text="@string/Fish"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/molusco"
-            android:layout_width="90dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="180dp"
-            android:layout_marginTop="211dp"
-            android:text="@string/Mollusk"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/crust"
-            android:layout_width="118dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="290dp"
-            android:layout_marginTop="242dp"
-            android:text="@string/Crustacean"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <CheckBox
-            android:id="@+id/celery"
-            android:layout_width="77dp"
-            android:layout_height="33dp"
-            android:layout_marginStart="292dp"
-            android:layout_marginTop="209dp"
-            android:text="@string/Celery"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <CheckBox
-            android:id="@+id/dairy"
-            android:layout_width="85dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="247dp"
-            android:text="@string/Dairy"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/glutenFree"
-            android:layout_width="84dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="205dp"
-            android:text="@string/Gluten"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <CheckBox
-            android:id="@+id/dfruit"
-            android:layout_width="192dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="177dp"
-            android:layout_marginTop="332dp"
-            android:text="@string/Dried_Fruit"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <CheckBox
-            android:id="@+id/huevos"
-            android:layout_width="78dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="292dp"
-            android:layout_marginTop="168dp"
-            android:text="@string/Egg"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <CheckBox
-            android:id="@+id/soja"
-            android:layout_width="80dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="180dp"
-            android:layout_marginTop="160dp"
-            android:text="@string/Soy"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/mostaza"
-            android:layout_width="91dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="180dp"
-            android:layout_marginTop="297dp"
-            android:text="@string/Mustard"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <CheckBox
-            android:id="@+id/diox"
-            android:layout_width="144dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="335dp"
-            android:text="@string/Sulfur_Dioxide"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/lupine"
-            android:layout_width="93dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="297dp"
-            android:text="@string/Lupine"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <CheckBox
-            android:id="@+id/range4"
-            android:layout_width="102dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="149dp"
-            android:layout_marginTop="479dp"
-            android:text="1500-2500"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/range11"
-            android:layout_width="89dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="17dp"
-            android:layout_marginTop="581dp"
-            android:text="0-1500"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/range2"
-            android:layout_width="102dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="479dp"
-            android:text="1500-2500"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/range8"
-            android:layout_width="103dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="269dp"
-            android:layout_marginTop="527dp"
-            android:text="2500>"
+            android:text="@string/Carbohydrate"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -311,110 +71,93 @@
             android:layout_width="96dp"
             android:layout_height="48dp"
             android:text="@string/Breakfast"
-            tools:layout_editor_absoluteX="180dp"
-            tools:layout_editor_absoluteY="602dp" />
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="529dp" />
 
         <CheckBox
-            android:id="@+id/range5"
-            android:layout_width="103dp"
+            android:id="@+id/diox"
+            android:layout_width="144dp"
             android:layout_height="48dp"
-            android:layout_marginStart="148dp"
-            android:layout_marginTop="527dp"
-            android:text="2500>"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/caloriesId5"
-            android:layout_width="116dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="532dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/Carbohydrate"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="256dp"
+            android:text="@string/Sulfur_Dioxide"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
-            android:id="@+id/range10"
-            android:layout_width="103dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="676dp"
-            android:text="2500>"
+            android:id="@+id/sesamo"
+            android:layout_width="94dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="188dp"
+            android:layout_marginTop="180dp"
+            android:text="@string/Sesame"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/editTextDishName2"
-            android:layout_width="390dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
-            android:ems="10"
-            android:hint="@string/Dish_Name"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <CheckBox
-            android:id="@+id/range6"
-            android:layout_width="85dp"
+            android:id="@+id/molusco"
+            android:layout_width="90dp"
             android:layout_height="48dp"
-            android:layout_marginStart="268dp"
-            android:layout_marginTop="431dp"
-            android:text="0-1500"
+            android:layout_marginStart="188dp"
+            android:layout_marginTop="132dp"
+            android:text="@string/Mollusk"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/caloriesId"
+        <RadioGroup
+            android:layout_width="115dp"
+            android:layout_height="137dp"
+            tools:layout_editor_absoluteX="32dp"
+            tools:layout_editor_absoluteY="363dp">
+
+            <RadioButton
+                android:id="@+id/rango1cal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0-1500" />
+
+            <RadioButton
+                android:id="@+id/rango2cal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1500-2500" />
+
+            <RadioButton
+                android:id="@+id/rango3cal"
+                android:layout_width="88dp"
+                android:layout_height="45dp"
+                android:text="+2500" />
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/huevos"
             android:layout_width="78dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="383dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/Calorie"
+            android:layout_height="40dp"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="88dp"
+            android:text="@string/Egg"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <CheckBox
-            android:id="@+id/range"
-            android:layout_width="85dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="149dp"
-            android:layout_marginTop="431dp"
-            android:text="0-1500"
+            android:id="@+id/dfruit"
+            android:layout_width="192dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="184dp"
+            android:layout_marginTop="252dp"
+            android:text="@string/Dried_Fruit"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/range1"
-            android:layout_width="85dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="431dp"
-            android:text="0-1500"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="96dp"
-            android:layout_height="48dp"
-            android:text="@string/Lunch"
-            tools:layout_editor_absoluteX="164dp"
-            tools:layout_editor_absoluteY="630dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
             android:id="@+id/caloriesId3"
             android:layout_width="78dp"
             android:layout_height="48dp"
-            android:layout_marginStart="149dp"
-            android:layout_marginTop="383dp"
+            android:layout_marginStart="156dp"
+            android:layout_marginTop="304dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="@string/Protein"
@@ -422,15 +165,226 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
-            android:id="@+id/range7"
-            android:layout_width="102dp"
+            android:id="@+id/pescaro"
+            android:layout_width="81dp"
             android:layout_height="48dp"
-            android:layout_marginStart="267dp"
-            android:layout_marginTop="479dp"
-            android:text="1500-2500"
-            android:textSize="14sp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="76dp"
+            android:text="@string/Fish"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="96dp"
+            android:layout_height="48dp"
+            android:text="@string/Dinner"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="619dp" />
+
+        <CheckBox
+            android:id="@+id/glutenFree"
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="124dp"
+            android:text="@string/Gluten"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="CrearMenu"
+            android:text="@string/list_menu"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="667dp" />
+
+        <EditText
+            android:id="@+id/caloriesId4"
+            android:layout_width="78dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="276dp"
+            android:layout_marginTop="304dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/Fat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/dairy"
+            android:layout_width="85dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="168dp"
+            android:text="@string/Dairy"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/caloriesId2"
+            android:layout_width="78dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="184dp"
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/Allergen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/crust"
+            android:layout_width="118dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="296dp"
+            android:layout_marginTop="160dp"
+            android:text="@string/Crustacean"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/caloriesId8"
+            android:layout_width="116dp"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/Category"
+            tools:layout_editor_absoluteX="284dp"
+            tools:layout_editor_absoluteY="529dp" />
+
+        <CheckBox
+            android:id="@+id/celery"
+            android:layout_width="77dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="128dp"
+            android:text="@string/Celery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/caloriesId"
+            android:layout_width="78dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="304dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/Calorie"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/mostaza"
+            android:layout_width="91dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="188dp"
+            android:layout_marginTop="216dp"
+            android:text="@string/Mustard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioGroup
+            android:layout_width="118dp"
+            android:layout_height="90dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/caloriesId8"
+            tools:layout_editor_absoluteX="284dp">
+
+            <RadioButton
+                android:id="@+id/restaurante"
+                android:layout_width="110dp"
+                android:layout_height="48dp"
+                android:text="@string/Restaurant" />
+
+            <RadioButton
+                android:id="@+id/casero"
+                android:layout_width="110dp"
+                android:layout_height="48dp"
+                android:text="@string/Homemade" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="102dp"
+            android:layout_height="142dp"
+            tools:layout_editor_absoluteX="156dp"
+            tools:layout_editor_absoluteY="362dp" >
+
+            <RadioButton
+                android:id="@+id/rango1prot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0-100" />
+
+            <RadioButton
+                android:id="@+id/rango2prot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100-200" />
+
+            <RadioButton
+                android:id="@+id/rango3prot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+200" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="113dp"
+            android:layout_height="138dp"
+            tools:layout_editor_absoluteX="276dp"
+            tools:layout_editor_absoluteY="363dp" >
+
+            <RadioButton
+                android:id="@+id/rango1fat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0-50" />
+
+            <RadioButton
+                android:id="@+id/rango2fat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="50-100" />
+
+            <RadioButton
+                android:id="@+id/rango3fat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+100" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="103dp"
+            android:layout_height="125dp"
+            tools:layout_editor_absoluteX="32dp"
+            tools:layout_editor_absoluteY="552dp" >
+
+            <RadioButton
+                android:id="@+id/rango1carb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0-50" />
+
+            <RadioButton
+                android:id="@+id/rango2carb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="50-100" />
+
+            <RadioButton
+                android:id="@+id/rango3carb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+100" />
+        </RadioGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

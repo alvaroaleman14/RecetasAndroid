@@ -21,7 +21,7 @@ public class GenerarMenu extends AppCompatActivity {
     Context context;
     CheckBox range1, range2, range3, gluten, crustacean, egg, fish, driedFruit, soy, dairy, mollusk, mustard, celery, lupine, sesame, sulfurDioxide;
     public final static String Name="Name";
-    RecipeBook recipeBook = RecipeBook.getInstancia(context);
+    RecipeBook recipeBook = RecipeBook.getInstancia(GenerarMenu.this);
     SQLiteDatabase db = recipeBook.getReadableDatabase();
 
     @Override
@@ -47,18 +47,14 @@ public class GenerarMenu extends AppCompatActivity {
         range3 = (CheckBox) findViewById(R.id.range3);
     }
 
-    public void compruebaCB (CheckBox checkbox){
-
-        checkbox.toString();
-
-        String selection = RecipeBook.DishEntry.COLUMN_NAME_ALLERGEN + " = ?";
-        String [] selectionArg ;
-    }
 
 
     public void CrearMenu(View view) {
 
         List<Alergenos> alergenos = new ArrayList<>();
+
+        List<String> primerRango = new ArrayList<String>();
+
 
         if (this.gluten.isChecked()){
             alergenos.add(Alergenos.Glutén);
@@ -85,7 +81,8 @@ public class GenerarMenu extends AppCompatActivity {
             alergenos.add(Alergenos.Moluscos);
         }
         if (this.mustard.isChecked()){
-            alergenos.add(Alergenos.Mostaza);}
+            alergenos.add(Alergenos.Mostaza);
+        }
         if (this.celery.isChecked()){alergenos.add(Alergenos.Apio);
         }
         if (this.lupine.isChecked()){
@@ -100,8 +97,12 @@ public class GenerarMenu extends AppCompatActivity {
 
         //alergenos.toString();
 
-        String selection = RecipeBook.DishEntry.COLUMN_NAME_ALLERGEN + " = ?";
-        String [] selectionArg = new String[] {alergenos.toString()};
+        if (alergenos.size() != 0){
+            String selection = RecipeBook.DishEntry.COLUMN_NAME_ALLERGEN + " = ?";
+            String [] selectionArg = new String[] {alergenos.toString()};
+        }
+
+
 
 
         switch (view.getId()) {
@@ -109,16 +110,16 @@ public class GenerarMenu extends AppCompatActivity {
                 range2.setChecked(false);
                 range3.setChecked(false);
                 String selection1 = RecipeBook.DishEntry.COLUMN_NAME_CALORIE + " = ?";
-                String[] selectionArgs1 = new String[]{"1500-2500"};
-                Cursor cursor = db.rawQuery("SELECT * FROM DISH WHERE CALORIE BETWEEN 1500 and 2500 ORDER BY CALORIE", selectionArgs1);
+                String[] selectionArgs1 = new String[]{"0-1500"};
+                Cursor cursor = db.rawQuery("SELECT * FROM DISH WHERE CALORIE BETWEEN 0 and 1500 ORDER BY CALORIE", selectionArgs1);
                 break;
 
             case R.id.range2:
                 range1.setChecked(false);
                 range3.setChecked(false);
                 String selection2 = RecipeBook.DishEntry.COLUMN_NAME_CALORIE + " = ?";
-                String[] selectionArgs2 = new String[]{"2500-3500"};
-                Cursor cursor2 = db.rawQuery("SELECT * FROM DISH WHERE CALORIE BETWEEN 2500 and 3500 ORDER BY CALORIE", selectionArgs2);
+                String[] selectionArgs2 = new String[]{"1500-2500"};
+                Cursor cursor2 = db.rawQuery("SELECT * FROM DISH WHERE CALORIE BETWEEN 1500 and 2500 ORDER BY CALORIE", selectionArgs2);
                 break;
 
 
@@ -127,7 +128,7 @@ public class GenerarMenu extends AppCompatActivity {
                 range2.setChecked(false);
                 String selection3 = RecipeBook.DishEntry.COLUMN_NAME_CALORIE + " = ?";
                 String[] selectionArgs3 = new String[]{"3500-5000"};
-                Cursor cursor3 = db.rawQuery("SELECT * FROM DISH WHERE CALORIE BETWEEN 3500 and 5000 ORDER BY CALORIE", selectionArgs3);
+                Cursor cursor3 = db.rawQuery("SELECT * FROM DISH WHERE CALORIE > 2500 ORDER BY CALORIE", selectionArgs3);
                 break;
         }
 
