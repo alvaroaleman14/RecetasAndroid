@@ -53,4 +53,6 @@
 
     <string name="SelectOneDish">Seleccione un plato de cada tipo</string>
     <string name="ViewMoreDetails">Ver más</string>
+    <string name="ListMenuMessageTitle">Lista menú</string>
+    <string name="ListMenuMessage">¿Esta seguro que desea listar el menú?</string>
 </resources>

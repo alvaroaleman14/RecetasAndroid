@@ -1,8 +1,10 @@
 package com.example.recetas;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -21,7 +23,8 @@ import java.util.List;
 
 public class GenerarMenu extends AppCompatActivity {
     CheckBox gluten, crustacean, egg, fish, driedFruit, soy, dairy, mollusk, mustard, celery, lupine, sesame, sulfurDioxide;
-    RadioButton cal1,cal2,cal3,carb1,carb2,carb3,prot1,prot2,prot3,fat1,fat2,fat3;
+    RadioButton cal,carb,prot,fat,cat;
+    RadioGroup calorias, proteinas,grasas, carboh, categoria;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,7 @@ public class GenerarMenu extends AppCompatActivity {
         lupine = (CheckBox) findViewById(R.id.lupine);
         sesame = (CheckBox) findViewById(R.id.sesamo);
         sulfurDioxide = (CheckBox) findViewById(R.id.diox);
+
 /*
         //RadioButtons calorias
         cal1 = (RadioButton) findViewById(R.id.rango1cal);
@@ -61,11 +65,29 @@ public class GenerarMenu extends AppCompatActivity {
         fat1 = (RadioButton) findViewById(R.id.rango1fat);
         fat2 = (RadioButton) findViewById(R.id.rango2fat);
         fat3 = (RadioButton) findViewById(R.id.rango3fat);*/
+
+
     }
 
+    public void onClickListMenu(View v){
+        AlertDialog.Builder builder = new AlertDialog.Builder(GenerarMenu.this);
+        builder.setPositiveButton(R.string.Ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                crearMenu(v);
+            }
+        });
+        builder.setNegativeButton(R.string.Cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
 
+            }
+        });
+        builder.setTitle(R.string.ListMenuMessageTitle);
+        builder.setMessage(R.string.ListMenuMessage);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 
-    public void CrearMenu(View view) {
+    public void crearMenu(View view) {
 
         List<Alergenos> alergenos = new ArrayList<>();
 
@@ -109,45 +131,30 @@ public class GenerarMenu extends AppCompatActivity {
             alergenos.add(Alergenos.Dióxido_De_Azufre);
         }
 
-        //alergenos.toString();
-
-        if (alergenos.size() != 0){
-            String selection = RecipeBook.DishEntry.COLUMN_NAME_ALLERGEN + " = ?";
-            String [] selectionArg = new String[] {alergenos.toString()};
-            String orderBy = RecipeBook.DishEntry.COLUMN_NAME_ALLERGEN;
-           // Cursor cursor = db.query(RecipeBook.DishEntry.TABLE_NAME, RecipeBook.DishEntry.COLUMN_NAME_ALLERGEN, selection, selectionArg, null, null, orderBy);
-        }
+        alergenos.toString();
 
 
-    /*
+    //Esta función en caso de no ser seleccionada devolvería -1
+        int radioIDcal = calorias.getCheckedRadioButtonId();
+        cal = findViewById(radioIDcal);
 
-        switch (view.getId()) {
-            case R.id.range1:
-                range2.setChecked(false);
-                range3.setChecked(false);
-                String selection1 = RecipeBook.DishEntry.COLUMN_NAME_CALORIE + " = ?";
-                String[] selectionArgs1 = new String[]{"0-1500"};
-                Cursor cursor = db.rawQuery("SELECT * FROM DISH WHERE CALORIE BETWEEN 0 and 1500 ORDER BY CALORIE", selectionArgs1);
-                break;
+        int radioIDgrasa = grasas.getCheckedRadioButtonId();
+        fat = findViewById(radioIDgrasa);
 
-            case R.id.range2:
-                range1.setChecked(false);
-                range3.setChecked(false);
-                String selection2 = RecipeBook.DishEntry.COLUMN_NAME_CALORIE + " = ?";
-                String[] selectionArgs2 = new String[]{"1500-2500"};
-                Cursor cursor2 = db.rawQuery("SELECT * FROM DISH WHERE CALORIE BETWEEN 1500 and 2500 ORDER BY CALORIE", selectionArgs2);
-                break;
+        int radioIDprot = proteinas.getCheckedRadioButtonId();
+        prot = findViewById(radioIDprot);
+
+        int radioIDcarb = carboh.getCheckedRadioButtonId();
+        carb = findViewById(radioIDcarb);
+
+        int radioIDcat = categoria.getCheckedRadioButtonId();
+        cat = findViewById(radioIDcat);
+
+        Dish dish = new Dish(GenerarMenu.this);
+
+        //dish.consigueMenu(alergenos,cal,prot,fat,carb,cat);
 
 
-            case R.id.range3:
-                range1.setChecked(false);
-                range2.setChecked(false);
-                String selection3 = RecipeBook.DishEntry.COLUMN_NAME_CALORIE + " = ?";
-                String[] selectionArgs3 = new String[]{"3500-5000"};
-                Cursor cursor3 = db.rawQuery("SELECT * FROM DISH WHERE CALORIE > 2500 ORDER BY CALORIE", selectionArgs3);
-                break;
-        }
-        */
         Bundle b = new Bundle();
        // b.putString(Name, "Prueba");
 

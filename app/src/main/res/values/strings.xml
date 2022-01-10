@@ -49,6 +49,20 @@
     <string name="second_fragment_label" translatable="false">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="rango1cal" translatable="false">[0-1500 Kcal]</string>
+    <string name="rango2cal" translatable="false">[1500-2500 Kcal]</string>
+    <string name="rango3cal" translatable="false">[>2500 Kcal]</string>
+    <string name="rango1prot" translatable="false">[0-100 g]</string>
+    <string name="rango2prot" translatable="false">[100-200 g]</string>
+    <string name="rango3prot" translatable="false">[>200 g]</string>
+    <string name="rango1fat" translatable="false">[0-50 g]</string>
+    <string name="rango2fat" translatable="false">[50-100 g]</string>
+    <string name="rango3fat" translatable="false">[>100 g]</string>
+    <string name="rango1carb" translatable="false">[0-50 g]</string>
+    <string name="rango2carb" translatable="false">[50-100 g]</string>
+    <string name="rango3carb" translatable="false">[>100 g]</string>
+    <string name="ListMenuMessageTitle">List Menu</string>
+    <string name="ListMenuMessage">Are you sure you want to list the menu?</string>
 
     <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
     <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>

@@ -1,6 +1,6 @@
 package com.example.recetas;
 
-//import static com.example.recetas.GenerarMenu;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
