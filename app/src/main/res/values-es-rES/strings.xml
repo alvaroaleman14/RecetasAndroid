@@ -57,9 +57,16 @@
     <string name="ListMenuMessage">¿Esta seguro que desea listar el menú?</string>
 
 
+
     <string name="RestaurantName">Nombre de restaurante</string>
     <string name="RestaurantAddress">Dirección de restaurante</string>
     <string name="RestaurantWeb">Web del restaurante</string>
 
     <string name="URL">URL</string>
+
+    <string name="ErrorMessageProtein">El filtro de la proteínas no puede estar vacío.</string>
+    <string name="ErrorMessageFat">El filtro de la grasas no puede estar vacío.</string>
+    <string name="ErrorMessageCalorie">El filtro de la calorías no puede estar vacío.</string>
+    <string name="ErrorMessageCarbohydrate">El filtro de los hidratos de carbono no puede estar vacío.</string>
+    <string name="ErrorMessageCategory">El filtro de la categoría no puede estar vacío.</string>
 </resources>

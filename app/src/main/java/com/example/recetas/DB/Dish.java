@@ -165,7 +165,6 @@ public class Dish extends RecipeBook {
 
     }
 
-
     //INSERTA O ACTUALIZA UN PLATO
     public long insertarPlato(String name, String description , Float protein, Float calorie, Float carbohydrate, Float fat, List<Alergenos> allergen,Boolean is_restaurant, List<TipoComida> type, String recipe, String URL, Integer id_Restaurant){
 
@@ -285,18 +284,15 @@ public class Dish extends RecipeBook {
 
     }
 
-    /*public List<Plato> consigueMenu(List list, RadioButton radiocal,RadioButton radioprot, RadioButton radiofat,RadioButton radiocarb,RadioButton casrest){
+    public List<Plato> consigueMenu(List list, Float minCal,Float maxCal,Float minProt, Float maxProt, Float minFat, Float maxFat, Float minCarb, Float maxCarb, Boolean isRes){
         SQLiteDatabase db = RecipeBook.getInstancia(context).getWritableDatabase();
-        String selectionAllergen = COLUMN_NAME_ALLERGEN + " = ?";
-        String selectionArgAllergen[] = new String[]{list.toString()};
+        String selection = COLUMN_NAME_ALLERGEN + " LIKE ? AND "+COLUMN_NAME_CALORIE+" BETWEEN ? AND ? AND "+ COLUMN_NAME_PROTEIN + " BETWEEN ? AND ? AND "+COLUMN_NAME_FAT+ " BETWEEN ? AND ? AND "
+                +COLUMN_NAME_CARBOHYDRATE+" BETWEEN ? AND ? AND "+COLUMN_NAME_IS_RESTAURANT+" = ? ";
 
+        String argSelection[] = new String[]{list.toString(),String.valueOf(minCal),String.valueOf(maxCal),String.valueOf(minProt),String.valueOf(maxProt),String.valueOf(minFat),String.valueOf(maxFat),String.valueOf(minCarb),String.valueOf(maxCarb),String.valueOf(isRes)};
 
-
-        String argSelection[] = new String[]{"0","1500"};
         String orderBy = DishEntry.COLUMN_NAME_NAME + " COLLATE NOCASE ASC";
 
-
-        String selection;
         Cursor cursor = db.query(DishEntry.TABLE_NAME, null, selection, argSelection, null, null, orderBy);
 
         Plato plato;
@@ -351,13 +347,9 @@ public class Dish extends RecipeBook {
             }while(cursor.moveToNext());
         }
         cursor.close();
-
         db.close();
         return listDish;
-
-
-    }*/
-
+    }
 
 
 

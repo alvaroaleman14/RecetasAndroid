@@ -43,6 +43,11 @@
     <string name="AddRestaurantError">Error adding restaurant.</string>
     <string name="Error">Error</string>
     <string name="ErrorMessageDishName">The name of the dish cannot be empty.</string>
+    <string name="ErrorMessageProtein">The protein filter cannot be empty.</string>
+    <string name="ErrorMessageFat">The fat filter cannot be empty.</string>
+    <string name="ErrorMessageCalorie">The calorie filter cannot be empty.</string>
+    <string name="ErrorMessageCarbohydrate">The carbohydrate filter cannot be empty.</string>
+    <string name="ErrorMessageCategory">The category filter cannot be empty.</string>
     <string name="ErrorMessageRestaurantName">The name of the restaurant cannot be empty.</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label" translatable="false">First Fragment</string>

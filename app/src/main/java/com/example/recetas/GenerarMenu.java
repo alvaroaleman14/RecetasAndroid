@@ -45,51 +45,65 @@ public class GenerarMenu extends AppCompatActivity {
         sesame = (CheckBox) findViewById(R.id.sesamo);
         sulfurDioxide = (CheckBox) findViewById(R.id.diox);
 
-/*
-        //RadioButtons calorias
-        cal1 = (RadioButton) findViewById(R.id.rango1cal);
-        cal2 = (RadioButton) findViewById(R.id.rango2cal);
-        cal3 = (RadioButton) findViewById(R.id.rango3cal);
-
-        //RadioButtons carbohidratos
-        carb1 = (RadioButton) findViewById(R.id.rango1carb);
-        carb2 = (RadioButton) findViewById(R.id.rango2carb);
-        carb3 = (RadioButton) findViewById(R.id.rango3carb);
-
-        //RadioButtons proteinas
-        prot1 = (RadioButton) findViewById(R.id.rango1prot);
-        prot2 = (RadioButton) findViewById(R.id.rango2prot);
-        prot3 = (RadioButton) findViewById(R.id.rango3prot);
-
-        //RadioButtons grasas
-        fat1 = (RadioButton) findViewById(R.id.rango1fat);
-        fat2 = (RadioButton) findViewById(R.id.rango2fat);
-        fat3 = (RadioButton) findViewById(R.id.rango3fat);*/
-
+        //RadioGroups
+        calorias = (RadioGroup) findViewById(R.id.RadioGroupCalorie);
+        grasas = (RadioGroup) findViewById(R.id.RadioGroupFat);
+        proteinas = (RadioGroup) findViewById(R.id.RadioGroupProtein);
+        carboh = (RadioGroup) findViewById(R.id.RadioGroupCarbohydrate);
+        categoria = (RadioGroup) findViewById(R.id.RadioGroupCategory);
 
     }
 
     public void onClickListMenu(View v){
-        AlertDialog.Builder builder = new AlertDialog.Builder(GenerarMenu.this);
-        builder.setPositiveButton(R.string.Ok, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                crearMenu(v);
-            }
-        });
-        builder.setNegativeButton(R.string.Cancel, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
+        if (calorias.getCheckedRadioButtonId() == -1 ||
+                grasas.getCheckedRadioButtonId() == -1 ||
+                proteinas.getCheckedRadioButtonId() == -1 ||
+                carboh.getCheckedRadioButtonId() == -1 ||
+                categoria.getCheckedRadioButtonId() == -1 ){
 
+            AlertDialog.Builder builder = new AlertDialog.Builder(GenerarMenu.this);
+            builder.setPositiveButton(R.string.Ok, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+
+                }
+            });
+            builder.setTitle(R.string.Error);
+            if (calorias.getCheckedRadioButtonId() == -1) {
+                builder.setMessage(R.string.ErrorMessageCalorie);
+            } else if (proteinas.getCheckedRadioButtonId() == -1) {
+                builder.setMessage(R.string.ErrorMessageProtein);
+            } else if (grasas.getCheckedRadioButtonId() == -1) {
+                builder.setMessage(R.string.ErrorMessageFat);
+            } else if (carboh.getCheckedRadioButtonId() == -1) {
+                builder.setMessage(R.string.ErrorMessageCarbohydrate);
+            } else if (categoria.getCheckedRadioButtonId() == -1) {
+                builder.setMessage(R.string.ErrorMessageCategory);
             }
-        });
-        builder.setTitle(R.string.ListMenuMessageTitle);
-        builder.setMessage(R.string.ListMenuMessage);
-        AlertDialog dialog = builder.create();
-        dialog.show();
+            AlertDialog dialog = builder.create();
+            dialog.show();
+
+        } else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(GenerarMenu.this);
+            builder.setPositiveButton(R.string.Ok, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    crearMenu(v);
+                }
+            });
+            builder.setNegativeButton(R.string.Cancel, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+
+                }
+            });
+            builder.setTitle(R.string.ListMenuMessageTitle);
+            builder.setMessage(R.string.ListMenuMessage);
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
     }
 
     public void crearMenu(View view) {
 
-       /* List<Alergenos> alergenos = new ArrayList<>();
+        List<Alergenos> alergenos = new ArrayList<>();
 
 
         if (this.gluten.isChecked()){
@@ -133,33 +147,86 @@ public class GenerarMenu extends AppCompatActivity {
 
         alergenos.toString();
 
+        //Esta función en caso de no ser seleccionada devolvería -1
 
-    //Esta función en caso de no ser seleccionada devolvería -1
+        //Calorias
+        float minCal=0,maxCal=0;
         int radioIDcal = calorias.getCheckedRadioButtonId();
-        cal = findViewById(radioIDcal);
+        //cal = findViewById(radioIDcal);
+        if (radioIDcal == 1){
+            minCal = 0;
+            maxCal = 1500;
+        }else if (radioIDcal == 2){
+            minCal = 1500;
+            maxCal = 2500;
+        }else if (radioIDcal == 3){
+            minCal = 2500;
+            maxCal = 10000;
+        }
 
+        //Grasas
+        float minFat=0,maxFat=0;
         int radioIDgrasa = grasas.getCheckedRadioButtonId();
-        fat = findViewById(radioIDgrasa);
+        //fat = findViewById(radioIDgrasa);
+        if (radioIDgrasa == 1){
+            minFat = 0;
+            maxFat = 50;
+        }else if (radioIDgrasa == 2){
+            minFat = 50;
+            maxFat = 100;
+        }else if (radioIDgrasa == 3){
+            minFat = 100;
+            maxFat = 1000;
+        }
 
+        //Proteinas
+        float minProt=0,maxProt=0;
         int radioIDprot = proteinas.getCheckedRadioButtonId();
-        prot = findViewById(radioIDprot);
+        //prot = findViewById(radioIDprot);
+        if (radioIDprot == 1){
+            minProt = 0;
+            maxProt= 100;
+        }else if (radioIDprot == 2){
+            minProt = 100;
+            maxProt = 200;
+        }else if (radioIDprot == 3){
+            minProt = 200;
+            maxProt = 5000;
+        }
 
+        //Carbohidratos
+        float minCarb=0,maxCarb=0;
         int radioIDcarb = carboh.getCheckedRadioButtonId();
-        carb = findViewById(radioIDcarb);
+        //carb = findViewById(radioIDcarb);
+        if (radioIDcarb == 1){
+            minCarb= 0;
+            maxCarb= 100;
+        }else if (radioIDcarb == 2){
+            minCarb = 100;
+            maxCarb = 200;
+        }else if (radioIDcarb == 3){
+            minCarb = 200;
+            maxCarb = 5000;
+        }
 
+        //Categoria
+        boolean isRes = false;
         int radioIDcat = categoria.getCheckedRadioButtonId();
-        cat = findViewById(radioIDcat);
+        //cat = findViewById(radioIDcat);
+        if (radioIDcat == 1) {
+            isRes = true;
+        }
 
         Dish dish = new Dish(GenerarMenu.this);
 
-        //dish.consigueMenu(alergenos,cal,prot,fat,carb,cat);
+        dish.consigueMenu(alergenos,minCal,maxCal,minProt,maxProt,minFat,maxFat,minCarb,maxCarb,isRes);
 
 
         Bundle b = new Bundle();
-       // b.putString(Name, "Prueba");
-        */
+        // b.putString(Name, "Prueba");
+
         Intent intento= new Intent(this, ListarPlatosMenu.class);
-       // intento.putExtras(b);
+        // intento.putExtras(b);
         startActivity(intento);
     }
 }
