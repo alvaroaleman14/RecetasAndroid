@@ -216,9 +216,11 @@ public class Dish extends RecipeBook {
     }
 
     public List<Plato> consigueMenu(List list, RadioButton radiocal,RadioButton radioprot, RadioButton radiofat,RadioButton radiocarb,RadioButton casrest){
-
         SQLiteDatabase db = RecipeBook.getInstancia(context).getWritableDatabase();
-        String selection = COLUMN_NAME_CALORIE + " BETWEEN ? AND ?";
+        String selectionAllergen = COLUMN_NAME_ALLERGEN + " = ?";
+        String selectionArgAllergen[] = new String[]{list.toString()};
+
+
 
         String argSelection[] = new String[]{"0","1500"};
         String orderBy = DishEntry.COLUMN_NAME_NAME + " COLLATE NOCASE ASC";
