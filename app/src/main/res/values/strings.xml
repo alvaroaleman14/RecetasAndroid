@@ -59,4 +59,8 @@
     <string name="Homemade">HomeMade</string>
     <string name="list_menu">List Menu</string>
 
+    <string name="SelectOneDish">Select one dish of each type</string>
+
+    <string name="ViewMoreDetails">View More</string>
+
 </resources>

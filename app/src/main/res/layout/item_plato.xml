@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
@@ -9,12 +10,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".1"
-            android:padding="2dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,18 +19,8 @@
             android:orientation="vertical"
             android:padding="3dp">
 
-            <TextView
-                android:id="@+id/viewName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_weight="1"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold" />
 
-
-            <LinearLayout
+            <!--<LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -46,120 +31,144 @@
                     android:layout_gravity="left"
                     android:paddingRight="5dp"
                     android:textSize="16sp" />
+            </LinearLayout>-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="23dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/viewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Protein"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/viewProtein"
+                    android:layout_width="144dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:paddingLeft="8dp"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Fat"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/viewFat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
             </LinearLayout>
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="16sp"
-                        android:text="@string/Protein" />
-                    <TextView
-                        android:id="@+id/viewProtein"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="left"
-                        android:paddingLeft="8dp"
-                        android:textSize="16sp" />
-                </LinearLayout>
+                    android:text="@string/Carbohydrate"
+                    android:textSize="14sp" />
 
+                <TextView
+                    android:id="@+id/viewCarbohydrate"
+                    android:layout_width="34dp"
+                    android:layout_height="22dp"
+                    android:layout_weight="1" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="66dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="16sp"
-                        android:text="@string/Fat"/>
-                    <TextView
-                        android:id="@+id/viewFat"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:paddingRight="5dp"
-                        android:textSize="16sp" />
-                </LinearLayout>
+                    android:text="@string/Calorie"
+                    android:textSize="14sp" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/viewCalorie"
+                    android:layout_width="84dp"
+                    android:layout_height="22dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="16sp"
-                        android:text="@string/Carbohydrate"/>
-                    <TextView
-                        android:id="@+id/viewCarbohydrate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:paddingRight="5dp"
-                        android:textSize="16sp" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
+                    android:text="@string/Allergen"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/viewAllergen"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="16sp"
-                        android:text="@string/Calorie"/>
-                    <TextView
-                        android:id="@+id/viewCalorie"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:paddingRight="5dp"
-                        android:textSize="16sp" />
-                </LinearLayout>
+                    android:layout_weight="1" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="88dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="16sp"
-                        android:text="@string/Allergen"/>
-                    <TextView
-                        android:id="@+id/viewAlergen"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:paddingRight="5dp"
-                        android:textSize="16sp" />
-                </LinearLayout>
+                    android:text="@string/Category"
+                    android:textSize="14sp" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/viewIsRestaurant"
+                    android:layout_width="178dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="16sp"
-                        android:text="@string/Category"/>
-                    <TextView
-                        android:id="@+id/viewIsRestaurant"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:paddingRight="5dp"
-                        android:textSize="16sp" />
-                </LinearLayout>
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="123dp"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/ViewMoreDetails"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="10sp"
+                    tools:ignore="TouchTargetSizeCheck">
+
+                    View More details
+                </Button>
+
+            </LinearLayout>
 
 
-                <LinearLayout
+            <!--<LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -175,8 +184,7 @@
                         android:layout_gravity="left"
                         android:paddingRight="5dp"
                         android:textSize="16sp" />
-                </LinearLayout>
-
+                </LinearLayout>!-->
 
 
         </LinearLayout>

@@ -50,4 +50,7 @@
 
     <string name="Homemade">Casero</string>
     <string name="list_menu">Listar Menu</string>
+
+    <string name="SelectOneDish">Seleccione un plato de cada tipo</string>
+    <string name="ViewMoreDetails">Ver más</string>
 </resources>

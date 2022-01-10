@@ -41,7 +41,7 @@ public class GenerarMenu extends AppCompatActivity {
         lupine = (CheckBox) findViewById(R.id.lupine);
         sesame = (CheckBox) findViewById(R.id.sesamo);
         sulfurDioxide = (CheckBox) findViewById(R.id.diox);
-
+/*
         //RadioButtons calorias
         cal1 = (RadioButton) findViewById(R.id.rango1cal);
         cal2 = (RadioButton) findViewById(R.id.rango2cal);
@@ -60,7 +60,7 @@ public class GenerarMenu extends AppCompatActivity {
         //RadioButtons grasas
         fat1 = (RadioButton) findViewById(R.id.rango1fat);
         fat2 = (RadioButton) findViewById(R.id.rango2fat);
-        fat3 = (RadioButton) findViewById(R.id.rango3fat);
+        fat3 = (RadioButton) findViewById(R.id.rango3fat);*/
     }
 
 
@@ -115,7 +115,7 @@ public class GenerarMenu extends AppCompatActivity {
             String selection = RecipeBook.DishEntry.COLUMN_NAME_ALLERGEN + " = ?";
             String [] selectionArg = new String[] {alergenos.toString()};
             String orderBy = RecipeBook.DishEntry.COLUMN_NAME_ALLERGEN;
-            Cursor cursor = db.query(RecipeBook.DishEntry.TABLE_NAME, RecipeBook.DishEntry.COLUMN_NAME_ALLERGEN, selection, selectionArg, null, null, orderBy);
+           // Cursor cursor = db.query(RecipeBook.DishEntry.TABLE_NAME, RecipeBook.DishEntry.COLUMN_NAME_ALLERGEN, selection, selectionArg, null, null, orderBy);
         }
 
 
