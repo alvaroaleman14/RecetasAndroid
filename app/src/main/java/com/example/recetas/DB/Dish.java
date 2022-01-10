@@ -96,76 +96,6 @@ public class Dish extends RecipeBook {
     }
 
 
-    public Plato verPlato(int id){
-        SQLiteDatabase db = RecipeBook.getInstancia(context).getWritableDatabase();
-
-        String selection = COLUMN_NAME_ID + " LIKE ?";
-        String argSelection[] = new String[]{id + "%"};
-        String orderBy = COLUMN_NAME_ID+ " COLLATE NOCASE ASC";
-
-        Cursor cursor = db.query(DishEntry.TABLE_NAME, null, selection, argSelection, null, null, orderBy);
-
-        Plato plato;
-        List<Plato> listDish = new LinkedList<>();
-
-
-        if(cursor.moveToFirst()) {
-            do {
-                plato = new Plato();
-                plato.setId(cursor.getInt(0));
-                plato.setName(cursor.getString(1));
-                plato.setDescription(cursor.getString(2));
-                plato.setProtein(cursor.getFloat(3));
-                plato.setFat(cursor.getFloat(4));
-                plato.setCarbohydrate(cursor.getFloat(5));
-                plato.setCalorie(cursor.getFloat(6));
-
-                //Alérgenos
-                String alergenosString = cursor.getString(7);
-                List<Alergenos> alergenos;
-                if (alergenosString.equals("[]")) {
-                    alergenos = new ArrayList<>();
-                } else {
-                    String alergenosStringNoBrackets = alergenosString.substring(1, alergenosString.length() - 1);
-                    alergenos = Arrays.asList(alergenosStringNoBrackets.split(",\\s+"))
-                            .stream()
-                            .map(Alergenos::valueOf)
-                            .collect(Collectors.toList());
-                }
-                plato.setAllergen(alergenos);
-                plato.setIs_restaurant(Boolean.valueOf(cursor.getString(8)));
-
-                //Tipo Comida
-                String tipoComidaString = cursor.getString(9);
-                List<TipoComida> tipoComida;
-                if (tipoComidaString.equals("[]")) {
-                    tipoComida = new ArrayList<>();
-                } else {
-                    String tipoComidaStringNoBrackets = tipoComidaString.substring(1, tipoComidaString.length() - 1);
-                    tipoComida = Arrays.asList(tipoComidaStringNoBrackets.split(",\\s+"))
-                            .stream()
-                            .map(TipoComida::valueOf)
-                            .collect(Collectors.toList());
-                }
-                plato.setType(tipoComida);
-
-                plato.setRecipe(cursor.getString(10));
-                plato.setURL(cursor.getString(11));
-                plato.setId_restaurant(cursor.getInt(12));
-
-                listDish.add(plato);
-
-            } while (cursor.moveToNext());
-
-        }
-        cursor.close();
-        db.close();
-        return listDish.get(0);
-
-
-    }
-
-
     //INSERTA O ACTUALIZA UN PLATO
     public long insertarPlato(String name, String description , Float protein, Float calorie, Float carbohydrate, Float fat, List<Alergenos> allergen,Boolean is_restaurant, List<TipoComida> type, String recipe, String URL, Integer id_Restaurant){
 
@@ -285,19 +215,15 @@ public class Dish extends RecipeBook {
 
     }
 
-    /*public List<Plato> consigueMenu(List list, RadioButton radiocal,RadioButton radioprot, RadioButton radiofat,RadioButton radiocarb,RadioButton casrest){
+    public List<Plato> consigueMenu(List list, Float minCal,Float maxCal,Float minProt, Float maxProt, Float minFat, Float maxFat, Float minCarb, Float maxCarb, Boolean isRes){
         SQLiteDatabase db = RecipeBook.getInstancia(context).getWritableDatabase();
-        float minProtein =0, maxProtein=0;
-        String selection = COLUMN_NAME_ALLERGEN + " LIKE ? AND " + COLUMN_NAME_PROTEIN + " BETWEEN ? AND ? AND " + COLUMN_NAME_FAT;
-        String argSelection[] = new String[]{list.toString(), String.valueOf(minProtein), String.valueOf(maxProtein)};
+        String selection = COLUMN_NAME_ALLERGEN + " LIKE ? AND "+COLUMN_NAME_CALORIE+" BETWEEN ? AND ? AND "+ COLUMN_NAME_PROTEIN + " BETWEEN ? AND ? AND "+COLUMN_NAME_FAT+ " BETWEEN ? AND ? AND "
+                +COLUMN_NAME_CARBOHYDRATE+" BETWEEN ? AND ? AND "+COLUMN_NAME_IS_RESTAURANT+" = ? ";
 
+        String argSelection[] = new String[]{list.toString(),String.valueOf(minCal),String.valueOf(maxCal),String.valueOf(minProt),String.valueOf(maxProt),String.valueOf(minFat),String.valueOf(maxFat),String.valueOf(minCarb),String.valueOf(maxCarb),String.valueOf(isRes)};
 
-
-        //String argSelection[] = new String[]{"0","1500"};
         String orderBy = DishEntry.COLUMN_NAME_NAME + " COLLATE NOCASE ASC";
 
-
-        String selection;
         Cursor cursor = db.query(DishEntry.TABLE_NAME, null, selection, argSelection, null, null, orderBy);
 
         Plato plato;
@@ -352,13 +278,9 @@ public class Dish extends RecipeBook {
             }while(cursor.moveToNext());
         }
         cursor.close();
-
         db.close();
         return listDish;
-
-
-    }*/
-
+    }
 
 
 
