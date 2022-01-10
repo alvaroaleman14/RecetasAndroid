@@ -121,6 +121,7 @@ public class GenerarMenu extends AppCompatActivity {
                 Cursor cursor2 = db.rawQuery("SELECT * FROM DISH WHERE CALORIE BETWEEN 2500 and 3500 ORDER BY CALORIE", selectionArgs2);
                 break;
 
+
             case R.id.range3:
                 range1.setChecked(false);
                 range2.setChecked(false);
