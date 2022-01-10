@@ -12,13 +12,17 @@ import android.widget.CheckBox;
 
 import com.example.recetas.DB.Dish;
 import com.example.recetas.DB.RecipeBook;
+import com.example.recetas.Enum.Alergenos;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GenerarMenu extends AppCompatActivity {
     Context context;
     CheckBox range1, range2, range3, gluten, crustacean, egg, fish, driedFruit, soy, dairy, mollusk, mustard, celery, lupine, sesame, sulfurDioxide;
     public final static String Name="Name";
     RecipeBook recipeBook = RecipeBook.getInstancia(context);
-   SQLiteDatabase db = recipeBook.getReadableDatabase();
+    SQLiteDatabase db = recipeBook.getReadableDatabase();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +47,62 @@ public class GenerarMenu extends AppCompatActivity {
         range3 = (CheckBox) findViewById(R.id.range3);
     }
 
+    public void compruebaCB (CheckBox checkbox){
+
+        checkbox.toString();
+
+        String selection = RecipeBook.DishEntry.COLUMN_NAME_ALLERGEN + " = ?";
+        String [] selectionArg ;
+    }
+
 
     public void CrearMenu(View view) {
+
+        List<Alergenos> alergenos = new ArrayList<>();
+
+        if (this.gluten.isChecked()){
+            alergenos.add(Alergenos.Glutén);
+        }
+        if (this.crustacean.isChecked()){
+            alergenos.add(Alergenos.Crustaceos);
+        }
+        if (this.egg.isChecked()){
+            alergenos.add(Alergenos.Huevo);
+        }
+        if (this.fish.isChecked()){
+            alergenos.add(Alergenos.Pescado);
+        }
+        if (this.driedFruit.isChecked()){
+            alergenos.add(Alergenos.Frutos_Secos);
+        }
+        if (this.soy.isChecked()){
+            alergenos.add(Alergenos.Soja);
+        }
+        if (this.dairy.isChecked()){
+            alergenos.add(Alergenos.Lacteos);
+        }
+        if (this.mollusk.isChecked()){
+            alergenos.add(Alergenos.Moluscos);
+        }
+        if (this.mustard.isChecked()){
+            alergenos.add(Alergenos.Mostaza);}
+        if (this.celery.isChecked()){alergenos.add(Alergenos.Apio);
+        }
+        if (this.lupine.isChecked()){
+            alergenos.add(Alergenos.Altramuces);
+        }
+        if (this.sesame.isChecked()){
+            alergenos.add(Alergenos.Sesamo);
+        }
+        if (this.sulfurDioxide.isChecked()){
+            alergenos.add(Alergenos.Dióxido_De_Azufre);
+        }
+
+        //alergenos.toString();
+
+        String selection = RecipeBook.DishEntry.COLUMN_NAME_ALLERGEN + " = ?";
+        String [] selectionArg = new String[] {alergenos.toString()};
+
 
         switch (view.getId()) {
             case R.id.range1:
