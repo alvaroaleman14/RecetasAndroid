@@ -55,21 +55,50 @@ public class GenerarMenu extends AppCompatActivity {
     }
 
     public void onClickListMenu(View v){
-        AlertDialog.Builder builder = new AlertDialog.Builder(GenerarMenu.this);
-        builder.setPositiveButton(R.string.Ok, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                crearMenu(v);
-            }
-        });
-        builder.setNegativeButton(R.string.Cancel, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
+        if (calorias.getCheckedRadioButtonId() == -1 ||
+                grasas.getCheckedRadioButtonId() == -1 ||
+                proteinas.getCheckedRadioButtonId() == -1 ||
+                carboh.getCheckedRadioButtonId() == -1 ||
+                categoria.getCheckedRadioButtonId() == -1 ){
 
+            AlertDialog.Builder builder = new AlertDialog.Builder(GenerarMenu.this);
+            builder.setPositiveButton(R.string.Ok, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+
+                }
+            });
+            builder.setTitle(R.string.Error);
+            if (calorias.getCheckedRadioButtonId() == -1) {
+                builder.setMessage(R.string.ErrorMessageCalorie);
+            } else if (proteinas.getCheckedRadioButtonId() == -1) {
+                builder.setMessage(R.string.ErrorMessageProtein);
+            } else if (grasas.getCheckedRadioButtonId() == -1) {
+                builder.setMessage(R.string.ErrorMessageFat);
+            } else if (carboh.getCheckedRadioButtonId() == -1) {
+                builder.setMessage(R.string.ErrorMessageCarbohydrate);
+            } else if (categoria.getCheckedRadioButtonId() == -1) {
+                builder.setMessage(R.string.ErrorMessageCategory);
             }
-        });
-        builder.setTitle(R.string.ListMenuMessageTitle);
-        builder.setMessage(R.string.ListMenuMessage);
-        AlertDialog dialog = builder.create();
-        dialog.show();
+            AlertDialog dialog = builder.create();
+            dialog.show();
+
+        } else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(GenerarMenu.this);
+            builder.setPositiveButton(R.string.Ok, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    crearMenu(v);
+                }
+            });
+            builder.setNegativeButton(R.string.Cancel, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+
+                }
+            });
+            builder.setTitle(R.string.ListMenuMessageTitle);
+            builder.setMessage(R.string.ListMenuMessage);
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
     }
 
     public void crearMenu(View view) {
@@ -118,7 +147,7 @@ public class GenerarMenu extends AppCompatActivity {
 
         alergenos.toString();
 
-    //Esta función en caso de no ser seleccionada devolvería -1
+        //Esta función en caso de no ser seleccionada devolvería -1
 
         //Calorias
         float minCal=0,maxCal=0;
@@ -194,10 +223,10 @@ public class GenerarMenu extends AppCompatActivity {
 
 
         Bundle b = new Bundle();
-       // b.putString(Name, "Prueba");
+        // b.putString(Name, "Prueba");
 
         Intent intento= new Intent(this, ListarPlatosMenu.class);
-       // intento.putExtras(b);
+        // intento.putExtras(b);
         startActivity(intento);
     }
 }
