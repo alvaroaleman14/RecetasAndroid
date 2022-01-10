@@ -47,4 +47,7 @@
     <string name="ErrorMessageRestaurantName">El nombre del restaurante no puede ser vacío.</string>
     <string name="Type">Tipo</string>
     <string name="Category">Categoría</string>
+
+    <string name="Homemade">Casero</string>
+    <string name="list_menu">Listar Menu</string>
 </resources>
