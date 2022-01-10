@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
@@ -16,6 +17,7 @@ import android.widget.RadioGroup;
 
 import com.example.recetas.DB.Dish;
 import com.example.recetas.DB.RecipeBook;
+import com.example.recetas.Entidades.Plato;
 import com.example.recetas.Enum.Alergenos;
 
 import java.util.ArrayList;
@@ -219,14 +221,12 @@ public class GenerarMenu extends AppCompatActivity {
 
         Dish dish = new Dish(GenerarMenu.this);
 
-        dish.consigueMenu(alergenos,minCal,maxCal,minProt,maxProt,minFat,maxFat,minCarb,maxCarb,isRes);
+        List<Plato> platos= dish.consigueMenu(alergenos,minCal,maxCal,minProt,maxProt,minFat,maxFat,minCarb,maxCarb,isRes);
 
 
         Bundle b = new Bundle();
-        // b.putString(Name, "Prueba");
-
         Intent intento= new Intent(this, ListarPlatosMenu.class);
-        // intento.putExtras(b);
+        intento.putExtra("array", (Parcelable) platos);
         startActivity(intento);
     }
 }
