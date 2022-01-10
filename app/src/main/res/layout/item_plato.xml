@@ -153,18 +153,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
-                <Button
-                    android:layout_width="123dp"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/white"
-                    android:text="@string/ViewMoreDetails"
-                    android:textColor="@android:color/holo_blue_dark"
-                    android:textSize="10sp"
-                    tools:ignore="TouchTargetSizeCheck">
-
-                    View More details
-                </Button>
-
             </LinearLayout>
 
 

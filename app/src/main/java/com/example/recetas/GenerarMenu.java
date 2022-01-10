@@ -89,7 +89,7 @@ public class GenerarMenu extends AppCompatActivity {
 
     public void crearMenu(View view) {
 
-        List<Alergenos> alergenos = new ArrayList<>();
+       /* List<Alergenos> alergenos = new ArrayList<>();
 
 
         if (this.gluten.isChecked()){
@@ -157,7 +157,7 @@ public class GenerarMenu extends AppCompatActivity {
 
         Bundle b = new Bundle();
        // b.putString(Name, "Prueba");
-
+        */
         Intent intento= new Intent(this, ListarPlatosMenu.class);
        // intento.putExtras(b);
         startActivity(intento);
