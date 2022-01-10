@@ -20,10 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GenerarMenu extends AppCompatActivity {
-    Context context;
     CheckBox gluten, crustacean, egg, fish, driedFruit, soy, dairy, mollusk, mustard, celery, lupine, sesame, sulfurDioxide;
-    RecipeBook recipeBook = RecipeBook.getInstancia(GenerarMenu.this);
-    SQLiteDatabase db = recipeBook.getReadableDatabase();
     RadioButton cal1,cal2,cal3,carb1,carb2,carb3,prot1,prot2,prot3,fat1,fat2,fat3;
 
     @Override
@@ -72,8 +69,6 @@ public class GenerarMenu extends AppCompatActivity {
 
         List<Alergenos> alergenos = new ArrayList<>();
 
-        List<String> primerRango = new ArrayList<String>();
-
 
         if (this.gluten.isChecked()){
             alergenos.add(Alergenos.Glutén);
@@ -119,10 +114,12 @@ public class GenerarMenu extends AppCompatActivity {
         if (alergenos.size() != 0){
             String selection = RecipeBook.DishEntry.COLUMN_NAME_ALLERGEN + " = ?";
             String [] selectionArg = new String[] {alergenos.toString()};
+            String orderBy = RecipeBook.DishEntry.COLUMN_NAME_ALLERGEN;
+            Cursor cursor = db.query(RecipeBook.DishEntry.TABLE_NAME, RecipeBook.DishEntry.COLUMN_NAME_ALLERGEN, selection, selectionArg, null, null, orderBy);
         }
 
 
-
+    /*
 
         switch (view.getId()) {
             case R.id.range1:
@@ -150,7 +147,7 @@ public class GenerarMenu extends AppCompatActivity {
                 Cursor cursor3 = db.rawQuery("SELECT * FROM DISH WHERE CALORIE > 2500 ORDER BY CALORIE", selectionArgs3);
                 break;
         }
-
+        */
         Bundle b = new Bundle();
        // b.putString(Name, "Prueba");
 
