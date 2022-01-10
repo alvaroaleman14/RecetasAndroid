@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.example.recetas.DB.Dish;
 import com.example.recetas.DB.RecipeBook;
@@ -19,10 +21,10 @@ import java.util.List;
 
 public class GenerarMenu extends AppCompatActivity {
     Context context;
-    CheckBox range1, range2, range3, gluten, crustacean, egg, fish, driedFruit, soy, dairy, mollusk, mustard, celery, lupine, sesame, sulfurDioxide;
-    public final static String Name="Name";
+    CheckBox gluten, crustacean, egg, fish, driedFruit, soy, dairy, mollusk, mustard, celery, lupine, sesame, sulfurDioxide;
     RecipeBook recipeBook = RecipeBook.getInstancia(GenerarMenu.this);
     SQLiteDatabase db = recipeBook.getReadableDatabase();
+    RadioButton cal1,cal2,cal3,carb1,carb2,carb3,prot1,prot2,prot3,fat1,fat2,fat3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +44,26 @@ public class GenerarMenu extends AppCompatActivity {
         lupine = (CheckBox) findViewById(R.id.lupine);
         sesame = (CheckBox) findViewById(R.id.sesamo);
         sulfurDioxide = (CheckBox) findViewById(R.id.diox);
-        range1 = (CheckBox) findViewById(R.id.range1);
-        range2 = (CheckBox) findViewById(R.id.range2);
-        range3 = (CheckBox) findViewById(R.id.range3);
+
+        //RadioButtons calorias
+        cal1 = (RadioButton) findViewById(R.id.rango1cal);
+        cal2 = (RadioButton) findViewById(R.id.rango2cal);
+        cal3 = (RadioButton) findViewById(R.id.rango3cal);
+
+        //RadioButtons carbohidratos
+        carb1 = (RadioButton) findViewById(R.id.rango1carb);
+        carb2 = (RadioButton) findViewById(R.id.rango2carb);
+        carb3 = (RadioButton) findViewById(R.id.rango3carb);
+
+        //RadioButtons proteinas
+        prot1 = (RadioButton) findViewById(R.id.rango1prot);
+        prot2 = (RadioButton) findViewById(R.id.rango2prot);
+        prot3 = (RadioButton) findViewById(R.id.rango3prot);
+
+        //RadioButtons grasas
+        fat1 = (RadioButton) findViewById(R.id.rango1fat);
+        fat2 = (RadioButton) findViewById(R.id.rango2fat);
+        fat3 = (RadioButton) findViewById(R.id.rango3fat);
     }
 
 
