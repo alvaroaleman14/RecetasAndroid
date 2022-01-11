@@ -7,25 +7,27 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/Boton_InsertarPlato"
-        android:layout_width="130dp"
-        android:layout_height="84dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="148dp"
-        android:onClick="Select_InsertarPlato"
-        android:text="@string/InsertDish"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/Boton_GenerarMenu"
-        android:layout_width="130dp"
-        android:layout_height="84dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:onClick="Select_GenerarMenu"
         android:text="@string/GenerateMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Boton_InsertarPlato" />
+
+    <Button
+        android:id="@+id/Boton_InsertarPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:onClick="Select_InsertarPlato"
+        android:text="@string/InsertDish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

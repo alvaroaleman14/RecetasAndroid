@@ -87,4 +87,5 @@
     <string name="ShowAllergen">Alérgeno:</string>
     <string name="ShowType">Tipo:</string>
     <string name="ShowCategory">Categoria:</string>
+    <string name="ListMenuSuccessfully">Menu listado correctamente.</string>
 </resources>
