@@ -13,7 +13,7 @@
         android:layout_marginStart="116dp"
         android:layout_marginTop="148dp"
         android:onClick="Select_InsertarPlato"
-        android:text="Insertar Plato"
+        android:text="@string/InsertDish"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,7 +24,7 @@
         android:layout_marginStart="116dp"
         android:layout_marginTop="56dp"
         android:onClick="Select_GenerarMenu"
-        android:text="Generar Menu"
+        android:text="@string/GenerateMenu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Boton_InsertarPlato" />
 

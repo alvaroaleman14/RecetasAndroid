@@ -93,4 +93,8 @@
     <string name="NoLunch">No lunch with these characteristics has been found </string>
     <string name="NoDinner">No dinner with these characteristics has been found </string>
 
+    <string name="GenerateMenu">Generate Menu</string>
+    <string name="InsertDish">Insert Dish</string>
+
+
 </resources>

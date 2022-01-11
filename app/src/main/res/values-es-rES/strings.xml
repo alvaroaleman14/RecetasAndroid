@@ -75,4 +75,7 @@
     <string name="NoBreakFast">No se ha encontrado ningún desayuno con estas características </string>
     <string name="NoLunch">No se ha encontrado ningún almuerzo con estas características </string>
     <string name="NoDinner">No se ha encontrado ninguna cena con estas características </string>
+
+    <string name="GenerateMenu">Generar Menu</string>
+    <string name="InsertDish">Insertar Plato</string>
 </resources>
