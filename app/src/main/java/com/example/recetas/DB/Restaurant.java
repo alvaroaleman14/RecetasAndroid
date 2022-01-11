@@ -9,16 +9,10 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
 
-import com.example.recetas.Entidades.Plato;
 import com.example.recetas.Entidades.Restaurante;
-import com.example.recetas.Enum.Alergenos;
-import com.example.recetas.Enum.TipoComida;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Restaurant extends RecipeBook {
 

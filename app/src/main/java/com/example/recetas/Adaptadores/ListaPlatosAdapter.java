@@ -42,19 +42,6 @@ public class ListaPlatosAdapter extends RecyclerView.Adapter<ListaPlatosAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull PlatoViewHolder holder, int position) {
-        /*holder.viewName.setText(listaPlatos.get(position).getName());
-        //holder.viewDescription.setText(listaPlatos.get(position).getDescription());
-        holder.viewProtein.setText(": "+listaPlatos.get(position).getProtein().toString());
-        holder.viewFat.setText(": "+listaPlatos.get(position).getFat().toString());
-        holder.viewCarbohydrate.setText(": "+listaPlatos.get(position).getCarbohydrate().toString());
-        holder.viewCalorie.setText(":"+listaPlatos.get(position).getCalorie().toString());
-        holder.viewCalorie.setText(": "+listaPlatos.get(position).getCalorie().toString());
-        String AlergenosAux= listaPlatos.get(position).getAllergen().toString();
-        holder.viewAlergen.setText(": "+AlergenosAux.substring(1,AlergenosAux.length()-1));
-        holder.viewIsRestaurant.setText(listaPlatos.get(position).getIs_restaurant() == true ? ": Restaurante" : ": Casero");
-        //String TipoAux= listaPlatos.get(position).getType().toString();
-        //holder.viewType.setText(": "+TipoAux.substring(1,TipoAux.length()-1));*/
-
 
         holder.viewName.setText(listaPlatos.get(position).getName());
         holder.viewProtein.setText(listaPlatos.get(position).getProtein().toString());
@@ -62,8 +49,6 @@ public class ListaPlatosAdapter extends RecyclerView.Adapter<ListaPlatosAdapter.
         holder.viewCarbohydrate.setText(listaPlatos.get(position).getCarbohydrate().toString());
         holder.viewCalorie.setText(listaPlatos.get(position).getCalorie().toString());
         holder.viewCalorie.setText(listaPlatos.get(position).getCalorie().toString());
-        //String AlergenosAux= listaPlatos.get(position).getAllergen().toString();
-        //holder.viewAlergen.setText(AlergenosAux.substring(1,AlergenosAux.length()-1));
 
         List<Alergenos> alergenosList= listaPlatos.get(position).getAllergen();
 
@@ -137,14 +122,12 @@ public class ListaPlatosAdapter extends RecyclerView.Adapter<ListaPlatosAdapter.
     public class PlatoViewHolder extends RecyclerView.ViewHolder {
 
         TextView viewName;
-        //TextView viewDescription;
         TextView viewProtein;
         TextView viewFat;
         TextView viewCarbohydrate;
         TextView viewCalorie;
         TextView viewAlergen;
         TextView viewIsRestaurant;
-        //TextView viewType;
 
 
 
@@ -152,14 +135,12 @@ public class ListaPlatosAdapter extends RecyclerView.Adapter<ListaPlatosAdapter.
             super(itemView);
 
             viewName = itemView.findViewById(R.id.viewName);
-            //viewDescription = itemView.findViewById(R.id.viewDescription);
             viewProtein = itemView.findViewById(R.id.viewProtein);
             viewFat = itemView.findViewById(R.id.viewFat);
             viewCarbohydrate = itemView.findViewById(R.id.viewCarbohydrate);
             viewCalorie = itemView.findViewById(R.id.viewCalorie);
             viewAlergen = itemView.findViewById(R.id.viewAllergen);
             viewIsRestaurant = itemView.findViewById(R.id.viewIsRestaurant);
-            //viewType = itemView.findViewById(R.id.viewType);
 
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override

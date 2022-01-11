@@ -1,8 +1,6 @@
 package com.example.recetas;
 
 
-
-import androidx.annotation.StringDef;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,13 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.DeadSystemException;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.recetas.Adaptadores.ListaPlatosAdapter;
-import com.example.recetas.DB.Dish;
 import com.example.recetas.Entidades.Plato;
 import com.example.recetas.Enum.TipoComida;
 
@@ -112,10 +107,6 @@ public class ListarPlatosMenu extends AppCompatActivity {
         }
 
 
-
-
-
-
     }
 
 
@@ -144,8 +135,6 @@ public class ListarPlatosMenu extends AppCompatActivity {
             return salida;
 
     }
-
-
 
 
 }

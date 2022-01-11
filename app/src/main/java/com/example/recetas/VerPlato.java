@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.recetas.DB.Dish;

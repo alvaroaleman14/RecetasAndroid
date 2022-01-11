@@ -3,31 +3,25 @@ package com.example.recetas;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.recetas.DB.Dish;
-import com.example.recetas.DB.RecipeBook;
 import com.example.recetas.Entidades.Plato;
 import com.example.recetas.Enum.Alergenos;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class GenerarMenu extends AppCompatActivity {
     CheckBox gluten, crustacean, egg, fish, driedFruit, soy, dairy, mollusk, mustard, celery, lupine, sesame, sulfurDioxide;
-    RadioButton cal,carb,prot,fat,cat;
     RadioGroup calorias, proteinas,grasas, carboh, categoria;
 
     @Override

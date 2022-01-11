@@ -143,29 +143,6 @@ public class Plato implements Parcelable {
 
     }
 
-    /*
-    @RequiresApi(api = Build.VERSION_CODES.Q)
-    public Plato(Parcel parcel){
-
-        this.id=parcel.readInt();
-        this.name=parcel.readString();
-        this.description=parcel.readString();
-        this.protein=parcel.readFloat();
-        this.calorie=parcel.readFloat();
-        this.carbohydrate=parcel.readFloat();
-        this.fat=parcel.readFloat();
-        this.allergen = new ArrayList<Alergenos>();
-        parcel.readList(this.allergen,Alergenos.class.getClassLoader());
-        this.is_restaurant=parcel.readBoolean();
-        this.type = new ArrayList<TipoComida>();
-        parcel.readList(this.type,TipoComida.class.getClassLoader());
-        this.recipe=parcel.readString();
-        this.URL=parcel.readString();
-        this.id_restaurant=parcel.readInt();
-
-
-    }*/
-
     public static final Parcelable.Creator<Plato> CREATOR = new Parcelable.Creator<Plato>() {
         @RequiresApi(api = Build.VERSION_CODES.Q)
         public Plato createFromParcel(Parcel parcel) {

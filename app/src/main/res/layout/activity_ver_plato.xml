@@ -33,7 +33,7 @@
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Description_Dish"
                 android:textSize="18sp"
@@ -47,7 +47,7 @@
 
             <TextView
                 android:id="@+id/textView5"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Protein"
                 android:textSize="18sp"
@@ -230,82 +230,5 @@
 
         </LinearLayout>
     </LinearLayout>
-
-    <!--<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Fat" />
-
-        <TextView
-            android:id="@+id/showFat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Fat" />
-
-        <TextView
-            android:id="@+id/showFat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="@string/Description_Dish" />
-
-        <TextView
-            android:id="@+id/textViewDesciption"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="108dp"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="@string/Protein" />
-
-        <TextView
-            android:id="@+id/ShowProtein"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
