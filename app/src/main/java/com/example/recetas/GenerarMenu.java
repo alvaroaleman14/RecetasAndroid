@@ -153,19 +153,16 @@ public class GenerarMenu extends AppCompatActivity {
 
         alergenos.toString();
 
-        //Esta función en caso de no ser seleccionada devolvería -1
-
         //Calorias
         float minCal=0,maxCal=0;
         int radioIDcal = calorias.getCheckedRadioButtonId();
-        //cal = findViewById(radioIDcal);
-        if (radioIDcal == 1){
+        if (radioIDcal == R.id.rango1cal){
             minCal = 0;
             maxCal = 1500;
-        }else if (radioIDcal == 2){
+        }else if (radioIDcal == R.id.rango2cal){
             minCal = 1500;
             maxCal = 2500;
-        }else if (radioIDcal == 3){
+        }else if (radioIDcal == R.id.rango3cal){
             minCal = 2500;
             maxCal = 10000;
         }
@@ -173,14 +170,13 @@ public class GenerarMenu extends AppCompatActivity {
         //Grasas
         float minFat=0,maxFat=0;
         int radioIDgrasa = grasas.getCheckedRadioButtonId();
-        //fat = findViewById(radioIDgrasa);
-        if (radioIDgrasa == 1){
+        if (radioIDgrasa == R.id.rango1fat){
             minFat = 0;
             maxFat = 50;
-        }else if (radioIDgrasa == 2){
+        }else if (radioIDgrasa == R.id.rango2fat){
             minFat = 50;
             maxFat = 100;
-        }else if (radioIDgrasa == 3){
+        }else if (radioIDgrasa == R.id.rango3fat){
             minFat = 100;
             maxFat = 1000;
         }
@@ -188,14 +184,13 @@ public class GenerarMenu extends AppCompatActivity {
         //Proteinas
         float minProt=0,maxProt=0;
         int radioIDprot = proteinas.getCheckedRadioButtonId();
-        //prot = findViewById(radioIDprot);
-        if (radioIDprot == 1){
+        if (radioIDprot == R.id.rango1prot){
             minProt = 0;
             maxProt= 100;
-        }else if (radioIDprot == 2){
+        }else if (radioIDprot == R.id.rango2prot){
             minProt = 100;
             maxProt = 200;
-        }else if (radioIDprot == 3){
+        }else if (radioIDprot == R.id.rango3prot){
             minProt = 200;
             maxProt = 5000;
         }
@@ -203,14 +198,13 @@ public class GenerarMenu extends AppCompatActivity {
         //Carbohidratos
         float minCarb=0,maxCarb=0;
         int radioIDcarb = carboh.getCheckedRadioButtonId();
-        //carb = findViewById(radioIDcarb);
-        if (radioIDcarb == 1){
+        if (radioIDcarb == R.id.rango1carb){
             minCarb= 0;
             maxCarb= 100;
-        }else if (radioIDcarb == 2){
+        }else if (radioIDcarb == R.id.rango2carb){
             minCarb = 100;
             maxCarb = 200;
-        }else if (radioIDcarb == 3){
+        }else if (radioIDcarb == R.id.rango3carb){
             minCarb = 200;
             maxCarb = 5000;
         }
@@ -218,19 +212,14 @@ public class GenerarMenu extends AppCompatActivity {
         //Categoria
         boolean isRes = false;
         int radioIDcat = categoria.getCheckedRadioButtonId();
-        if (radioIDcat == 1) {
+        if (radioIDcat == R.id.restaurante) {
             isRes = true;
         }
 
         Dish dish = new Dish(GenerarMenu.this);
 
-        List<Plato> platos= dish.consigueMenu(alergenos,minCal,maxCal,minProt,maxProt,minFat,maxFat,minCarb,maxCarb,isRes);
+        ArrayList<Plato> platosArray = dish.consigueMenu(alergenos,minCal,maxCal,minProt,maxProt,minFat,maxFat,minCarb,maxCarb,isRes);
 
-//        platos=dish.mostrarPlatos();
-
-
-
-        ArrayList<Plato> platosArray= new ArrayList<>(platos);
         Bundle b = new Bundle();
         Intent intento= new Intent(this, ListarPlatosMenu.class);
         intento.putParcelableArrayListExtra("array", (ArrayList<? extends Parcelable>) platosArray);

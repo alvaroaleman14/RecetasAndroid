@@ -62,9 +62,9 @@
     <string name="rango1fat" translatable="false">[0-50 g]</string>
     <string name="rango2fat" translatable="false">[50-100 g]</string>
     <string name="rango3fat" translatable="false">[>100 g]</string>
-    <string name="rango1carb" translatable="false">[0-50 g]</string>
-    <string name="rango2carb" translatable="false">[50-100 g]</string>
-    <string name="rango3carb" translatable="false">[>100 g]</string>
+    <string name="rango1carb" translatable="false">[0-100 g]</string>
+    <string name="rango2carb" translatable="false">[100-200 g]</string>
+    <string name="rango3carb" translatable="false">[>200 g]</string>
     <string name="ListMenuMessageTitle">List Menu</string>
     <string name="ListMenuMessage">Are you sure you want to list the menu?</string>
     <string name="ListMenuSuccessfully">Menu listed correctly.</string>
