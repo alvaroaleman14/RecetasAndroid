@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.DeadSystemException;
 import android.os.Parcelable;
@@ -66,6 +67,8 @@ public class ListarPlatosMenu extends AppCompatActivity {
 
             if(desayunos.isEmpty()){
                 textViewBreakFast.setText(R.string.NoBreakFast);
+                textViewBreakFast.setTextColor(Color.RED);
+                listaPlatosDesayuno.setVisibility(View.GONE);
             }else{
                 listaPlatosAdapterDesayuno = new ListaPlatosAdapter(desayunos);
                 listaPlatosDesayuno.setAdapter(listaPlatosAdapterDesayuno);
@@ -74,6 +77,8 @@ public class ListarPlatosMenu extends AppCompatActivity {
 
             if(almuerzos.isEmpty()){
                 textViewLunch.setText(R.string.NoLunch);
+                textViewLunch.setTextColor(Color.RED);
+                listaPlatosAlmuerzo.setVisibility(View.GONE);
             }else{
                 listaPlatosAdapterAlmuerzo =new ListaPlatosAdapter(almuerzos);
                 listaPlatosAlmuerzo.setAdapter(listaPlatosAdapterAlmuerzo);
@@ -81,6 +86,8 @@ public class ListarPlatosMenu extends AppCompatActivity {
 
             if(cenas.isEmpty()){
                 textViewDinner.setText(R.string.NoDinner);
+                textViewDinner.setTextColor(Color.RED);
+                listaPlatosCena.setVisibility(View.GONE);
             }else{
                 listaPlatosAdapterCena =new ListaPlatosAdapter(cenas);
                 listaPlatosCena.setAdapter(listaPlatosAdapterCena);
