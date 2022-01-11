@@ -3,6 +3,7 @@ package com.example.recetas;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -86,6 +87,7 @@ public class VerPlato extends AppCompatActivity {
                 txtNombreRestaurante.setText(restaurante.getName());
                 txtDireccioRestaurante.setText(restaurante.getAddress());
                 txtWebRestaurante.setText(restaurante.getWeb());
+                txtWebRestaurante.setMovementMethod(LinkMovementMethod.getInstance());
             }else{
                 txtNombreRestaurante.setVisibility(View.GONE);
                 txtDireccioRestaurante.setVisibility(View.GONE);
@@ -95,6 +97,7 @@ public class VerPlato extends AppCompatActivity {
                 WebRestaurante.setVisibility(View.GONE);
                 txtRecipe.setText(plato.getRecipe());
                 txtURL.setText(plato.getURL());
+                txtURL.setMovementMethod(LinkMovementMethod.getInstance());
             }
 
         }

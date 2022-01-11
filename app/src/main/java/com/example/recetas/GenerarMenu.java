@@ -21,6 +21,7 @@ import com.example.recetas.Entidades.Plato;
 import com.example.recetas.Enum.Alergenos;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class GenerarMenu extends AppCompatActivity {
@@ -223,10 +224,14 @@ public class GenerarMenu extends AppCompatActivity {
 
         List<Plato> platos= dish.consigueMenu(alergenos,minCal,maxCal,minProt,maxProt,minFat,maxFat,minCarb,maxCarb,isRes);
 
+//        platos=dish.mostrarPlatos();
 
+
+
+        ArrayList<Plato> platosArray= new ArrayList<>(platos);
         Bundle b = new Bundle();
         Intent intento= new Intent(this, ListarPlatosMenu.class);
-        intento.putExtra("array", (Parcelable) platos);
+        intento.putParcelableArrayListExtra("array", (ArrayList<? extends Parcelable>) platosArray);
         startActivity(intento);
     }
 }

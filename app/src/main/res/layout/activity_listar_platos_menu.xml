@@ -27,7 +27,7 @@
 
         <TextView
             android:id="@+id/textViewBreakFast"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Breakfast"
             android:textColor="@color/black"
@@ -46,7 +46,7 @@
 
         <TextView
             android:id="@+id/textViewLunch"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Lunch"
             android:textColor="@color/black"
@@ -65,7 +65,7 @@
 
         <TextView
             android:id="@+id/textViewDinner"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Dinner"
             android:textColor="@color/black"

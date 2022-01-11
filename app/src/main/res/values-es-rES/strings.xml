@@ -69,4 +69,10 @@
     <string name="ErrorMessageCalorie">El filtro de la calorías no puede estar vacío.</string>
     <string name="ErrorMessageCarbohydrate">El filtro de los hidratos de carbono no puede estar vacío.</string>
     <string name="ErrorMessageCategory">El filtro de la categoría no puede estar vacío.</string>
+
+
+    <string name="NoDish">No se ha encontrado ningún plato con estas características</string>
+    <string name="NoBreakFast">No se ha encontrado ningún desayuno con estas características </string>
+    <string name="NoLunch">No se ha encontrado ningún almuerzo con estas características </string>
+    <string name="NoDinner">No se ha encontrado ninguna cena con estas características </string>
 </resources>

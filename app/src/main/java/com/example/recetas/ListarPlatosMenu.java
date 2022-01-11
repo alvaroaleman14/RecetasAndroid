@@ -2,6 +2,7 @@ package com.example.recetas;
 
 
 
+import androidx.annotation.StringDef;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.DeadSystemException;
 import android.os.Parcelable;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.recetas.Adaptadores.ListaPlatosAdapter;
@@ -27,11 +29,16 @@ public class ListarPlatosMenu extends AppCompatActivity {
     private RecyclerView listaPlatosCena;
     private List<Plato> listaPlatos;
     private ListaPlatosAdapter listaPlatosAdapterDesayuno,listaPlatosAdapterAlmuerzo,listaPlatosAdapterCena;
+    private TextView textViewSeleccionar,textViewBreakFast,textViewLunch,textViewDinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_platos_menu);
 
+        textViewSeleccionar= findViewById(R.id.textViewSeleccionar);
+        textViewBreakFast=findViewById(R.id.textViewBreakFast);
+        textViewLunch=findViewById(R.id.textViewLunch);
+        textViewDinner=findViewById(R.id.textViewDinner);
 
         listaPlatosDesayuno = findViewById(R.id.listaPlatosDesayuno);
         listaPlatosDesayuno.setHasFixedSize(true);
@@ -47,26 +54,57 @@ public class ListarPlatosMenu extends AppCompatActivity {
 
 
         Intent intento = getIntent();
-        Bundle b = intento.getExtras();
-        List<Plato> listaPlatos;
-        listaPlatos= (List<Plato>) b.getParcelable("list");
+        List<Plato> listaPlatos= intento.getParcelableArrayListExtra("array");
+
+        if(listaPlatos.isEmpty()==false && listaPlatos!=null){
+            List<List<Plato>> platos= MostrarMenu(listaPlatos);
+
+            List<Plato> desayunos = platos.get(0);
+            List<Plato> almuerzos= platos.get(1);
+            List<Plato> cenas= platos.get(2);
 
 
-        List<List<Plato>> platos= MostrarMenu(listaPlatos);
+            if(desayunos.isEmpty()){
+                textViewBreakFast.setText(R.string.NoBreakFast);
+            }else{
+                listaPlatosAdapterDesayuno = new ListaPlatosAdapter(desayunos);
+                listaPlatosDesayuno.setAdapter(listaPlatosAdapterDesayuno);
+            }
 
-        List<Plato> desayunos = platos.get(0);
-        List<Plato> almuerzos= platos.get(1);
-        List<Plato> cenas= platos.get(2);
+
+            if(almuerzos.isEmpty()){
+                textViewLunch.setText(R.string.NoLunch);
+            }else{
+                listaPlatosAdapterAlmuerzo =new ListaPlatosAdapter(almuerzos);
+                listaPlatosAlmuerzo.setAdapter(listaPlatosAdapterAlmuerzo);
+            }
+
+            if(cenas.isEmpty()){
+                textViewDinner.setText(R.string.NoDinner);
+            }else{
+                listaPlatosAdapterCena =new ListaPlatosAdapter(cenas);
+                listaPlatosCena.setAdapter(listaPlatosAdapterCena);
+            }
 
 
-        listaPlatosAdapterDesayuno = new ListaPlatosAdapter(desayunos);
-        listaPlatosDesayuno.setAdapter(listaPlatosAdapterDesayuno);
 
-        listaPlatosAdapterAlmuerzo =new ListaPlatosAdapter(almuerzos);
-        listaPlatosAlmuerzo.setAdapter(listaPlatosAdapterAlmuerzo);
 
-        listaPlatosAdapterCena =new ListaPlatosAdapter(cenas);
-        listaPlatosCena.setAdapter(listaPlatosAdapterCena);
+        }else{
+
+            textViewBreakFast.setVisibility(View.GONE);
+            textViewLunch.setVisibility(View.GONE);
+            textViewDinner.setVisibility(View.GONE);
+            listaPlatosDesayuno.setVisibility(View.GONE);
+            listaPlatosAlmuerzo.setVisibility(View.GONE);
+            listaPlatosCena.setVisibility(View.GONE);
+
+
+            textViewSeleccionar.setText(R.string.NoDish);
+
+
+        }
+
+
 
 
 

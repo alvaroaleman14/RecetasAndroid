@@ -1,11 +1,18 @@
 package com.example.recetas.Entidades;
 
+import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.RequiresApi;
+
 import com.example.recetas.Enum.Alergenos;
 import com.example.recetas.Enum.TipoComida;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Plato {
+public class Plato implements Parcelable {
 
     private Integer id;
     private String name;
@@ -124,5 +131,88 @@ public class Plato {
 
     public void setId_restaurant(Integer id_restaurant) {
         this.id_restaurant = id_restaurant;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+
+    public Plato(){
+
+    }
+
+    /*
+    @RequiresApi(api = Build.VERSION_CODES.Q)
+    public Plato(Parcel parcel){
+
+        this.id=parcel.readInt();
+        this.name=parcel.readString();
+        this.description=parcel.readString();
+        this.protein=parcel.readFloat();
+        this.calorie=parcel.readFloat();
+        this.carbohydrate=parcel.readFloat();
+        this.fat=parcel.readFloat();
+        this.allergen = new ArrayList<Alergenos>();
+        parcel.readList(this.allergen,Alergenos.class.getClassLoader());
+        this.is_restaurant=parcel.readBoolean();
+        this.type = new ArrayList<TipoComida>();
+        parcel.readList(this.type,TipoComida.class.getClassLoader());
+        this.recipe=parcel.readString();
+        this.URL=parcel.readString();
+        this.id_restaurant=parcel.readInt();
+
+
+    }*/
+
+    public static final Parcelable.Creator<Plato> CREATOR = new Parcelable.Creator<Plato>() {
+        @RequiresApi(api = Build.VERSION_CODES.Q)
+        public Plato createFromParcel(Parcel parcel) {
+            final Plato plato= new Plato();
+
+            plato.setId(parcel.readInt());
+            plato.setName(parcel.readString());
+            plato.setDescription(parcel.readString());
+            plato.setProtein(parcel.readFloat());
+            plato.setCalorie(parcel.readFloat());
+            plato.setCarbohydrate(parcel.readFloat());
+            plato.setFat(parcel.readFloat());
+            List<Alergenos> alergenos = new ArrayList<Alergenos>();
+            parcel.readList(alergenos,Alergenos.class.getClassLoader());
+            plato.setAllergen(alergenos);
+            plato.setIs_restaurant(parcel.readBoolean());
+            List<TipoComida> tipos= new ArrayList<TipoComida>();
+            parcel.readList(tipos,TipoComida.class.getClassLoader());
+            plato.setType(tipos);
+            plato.setRecipe(parcel.readString());
+            plato.setURL(parcel.readString());
+            plato.setId_restaurant(parcel.readInt());
+            return plato;
+        }
+
+        public Plato[] newArray(int size) {
+            return new Plato[size];
+        }
+    };
+
+    @RequiresApi(api = Build.VERSION_CODES.Q)
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+
+        parcel.writeInt(id);
+        parcel.writeString(name);
+        parcel.writeString(description);
+        parcel.writeFloat(protein);
+        parcel.writeFloat(calorie);
+        parcel.writeFloat(carbohydrate);
+        parcel.writeFloat(fat);
+        parcel.writeList(allergen);
+        parcel.writeBoolean(is_restaurant);
+        parcel.writeList(type);
+        parcel.writeString(recipe);
+        parcel.writeString(URL);
+        parcel.writeInt(id_restaurant);
+
     }
 }

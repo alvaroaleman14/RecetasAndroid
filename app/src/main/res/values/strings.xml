@@ -88,4 +88,9 @@
 
     <string name="URL">URL</string>
 
+    <string name="NoDish">No dish with these characteristics has been found </string>
+    <string name="NoBreakFast">No breakFast with these characteristics has been found </string>
+    <string name="NoLunch">No lunch with these characteristics has been found </string>
+    <string name="NoDinner">No dinner with these characteristics has been found </string>
+
 </resources>
