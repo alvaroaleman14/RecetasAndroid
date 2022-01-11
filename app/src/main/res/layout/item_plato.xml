@@ -55,23 +55,23 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="79dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/Protein"
+                    android:text="@string/ShowProtein"
                     android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/viewProtein"
-                    android:layout_width="144dp"
+                    android:layout_width="90dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
                     android:paddingLeft="8dp"
                     android:textSize="14sp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="51dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/Fat"
+                    android:text="@string/ShowFat"
                     android:textSize="14sp" />
 
                 <TextView
@@ -88,21 +88,21 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="117dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/Carbohydrate"
+                    android:text="@string/ShowCarbohydrate"
                     android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/viewCarbohydrate"
-                    android:layout_width="34dp"
-                    android:layout_height="22dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1" />
 
                 <TextView
-                    android:layout_width="66dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/Calorie"
+                    android:text="@string/ShowCalorie"
                     android:textSize="14sp" />
 
                 <TextView
@@ -118,14 +118,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="67dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/Allergen"
+                    android:text="@string/ShowAllergen"
                     android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/viewAllergen"
-                    android:layout_width="wrap_content"
+                    android:layout_width="185dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
@@ -142,9 +142,9 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="88dp"
+                    android:layout_width="71dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/Category"
+                    android:text="@string/ShowCategory"
                     android:textSize="14sp" />
 
                 <TextView

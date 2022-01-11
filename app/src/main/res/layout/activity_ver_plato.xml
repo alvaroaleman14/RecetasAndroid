@@ -20,7 +20,7 @@
             android:layout_height="match_parent"
             android:text="@string/Dish_Name"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -36,53 +36,56 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="@string/Description_Dish"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textViewDesciption"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="12sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="@string/Protein"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/showProtein"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Fat"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/showFat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Carbohydrate"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/showCarbohydrate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp" />
+                android:textSize="18sp" />
 
 
             <TextView
@@ -90,13 +93,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Calorie"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/showCalorie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp" />
+                android:textSize="18sp" />
 
 
             <TextView
@@ -104,80 +108,85 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Allergen"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/showAllergen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Category"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/showCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textView14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Type"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/showType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/recetaTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Recipe"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/showRecipe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/urlText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/URL"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/showURL"
                 android:layout_width="match_parent"
-                android:autoLink="web"
                 android:layout_height="wrap_content"
-                android:textSize="12sp" />
+                android:autoLink="web"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/nombreRestauranteTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/RestaurantName"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/showRestaurantName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp" />
+                android:textSize="18sp" />
 
 
             <TextView
@@ -185,27 +194,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/RestaurantAddress"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/showRestaurantAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/webRestauranteTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/RestaurantWeb"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/showWebRestaurant"
                 android:layout_width="match_parent"
-                android:autoLink="web"
                 android:layout_height="wrap_content"
-                android:textSize="12sp" />
+                android:autoLink="web"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout

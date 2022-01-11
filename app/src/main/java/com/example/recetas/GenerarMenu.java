@@ -215,7 +215,6 @@ public class GenerarMenu extends AppCompatActivity {
         //Categoria
         boolean isRes = false;
         int radioIDcat = categoria.getCheckedRadioButtonId();
-        //cat = findViewById(radioIDcat);
         if (radioIDcat == 1) {
             isRes = true;
         }

@@ -12,6 +12,11 @@ import com.example.recetas.DB.Dish;
 import com.example.recetas.DB.Restaurant;
 import com.example.recetas.Entidades.Plato;
 import com.example.recetas.Entidades.Restaurante;
+import com.example.recetas.Enum.Alergenos;
+import com.example.recetas.Enum.TipoComida;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class VerPlato extends AppCompatActivity {
 
@@ -72,10 +77,10 @@ public class VerPlato extends AppCompatActivity {
             txtGrasa.setText(plato.getFat().toString());
             txtCarbohidrato.setText(plato.getCarbohydrate().toString());
             txtCalorie.setText(plato.getCalorie().toString());
-            String AlergenosAux= plato.getAllergen().toString();
+            String AlergenosAux= AlergenosTraduccion(plato.getAllergen()).toString();
             txtAllergen.setText(AlergenosAux.substring(1,AlergenosAux.length()-1));
-            txtCategory.setText(plato.getIs_restaurant() == true ? "Restaurante" : "Casero");
-            String TipoAux= plato.getType().toString();
+            txtCategory.setText(plato.getIs_restaurant() == true ? this.getString(R.string.Restaurant) : this.getString(R.string.Homemade));
+            String TipoAux= TipoComidaTraduccion(plato.getType()).toString();
             txtType.setText(TipoAux.substring(1,TipoAux.length()-1));
             if(plato.getIs_restaurant()){
                 txtRecipe.setVisibility(View.GONE);
@@ -102,6 +107,56 @@ public class VerPlato extends AppCompatActivity {
 
         }
 
+    }
+
+
+    public List<String> TipoComidaTraduccion(List<TipoComida> tipoComidas){
+        List<String> comidasSalida =new ArrayList<>();
+        for(TipoComida comida: tipoComidas){
+            if(comida.equals(TipoComida.Desayuno)){
+                comidasSalida.add(this.getString(R.string.Breakfast));
+            }else if(comida.equals(TipoComida.Almuerzo)){
+                comidasSalida.add(this.getString(R.string.Lunch));
+            }else if(comida.equals(TipoComida.Cena)){
+                comidasSalida.add(this.getString(R.string.Dinner));
+            }
+        }
+        return comidasSalida;
+    }
+
+
+    public List<String> AlergenosTraduccion(List<Alergenos> alergenosList){
+        List<String> alergenosSalida =new ArrayList<>();
+        for(Alergenos alergeno: alergenosList){
+            if(alergeno.equals(Alergenos.Altramuces)){
+                alergenosSalida.add(this.getString(R.string.Lupine));
+            }else if(alergeno.equals(Alergenos.Apio)){
+                alergenosSalida.add(this.getString(R.string.Celery));
+            }else if(alergeno.equals(Alergenos.Crustaceos)){
+                alergenosSalida.add(this.getString(R.string.Crustacean));
+            }else if(alergeno.equals(Alergenos.Glutén)){
+                alergenosSalida.add(this.getString(R.string.Gluten));
+            }else if(alergeno.equals(Alergenos.Dióxido_De_Azufre)){
+                alergenosSalida.add(this.getString(R.string.Sulfur_Dioxide));
+            }else if(alergeno.equals(Alergenos.Frutos_Secos)){
+                alergenosSalida.add(this.getString(R.string.Dried_Fruit));
+            }else if(alergeno.equals(Alergenos.Huevo)){
+                alergenosSalida.add(this.getString(R.string.Egg));
+            }else if(alergeno.equals(Alergenos.Lacteos)){
+                alergenosSalida.add(this.getString(R.string.Dairy));
+            }else if(alergeno.equals(Alergenos.Moluscos)){
+                alergenosSalida.add(this.getString(R.string.Mollusk));
+            }else if(alergeno.equals(Alergenos.Mostaza)){
+                alergenosSalida.add(this.getString(R.string.Mustard));
+            }else if(alergeno.equals(Alergenos.Pescado)){
+                alergenosSalida.add(this.getString(R.string.Fish));
+            }else if(alergeno.equals(Alergenos.Sesamo)){
+                alergenosSalida.add(this.getString(R.string.Sesame));
+            }else if(alergeno.equals(Alergenos.Soja)){
+                alergenosSalida.add(this.getString(R.string.Soy));
+            }
+        }
+        return alergenosSalida;
     }
 
 

@@ -5,10 +5,10 @@
     <!--Strings used for InsertarPLato -->
     <string name="Dish_Name">Name</string>
     <string name="Description_Dish">Description</string>
-    <string name="Protein">Protein</string>
-    <string name="Calorie">Calorie</string>
-    <string name="Carbohydrate">Carbohydrate</string>
-    <string name="Fat">Fat</string>
+    <string name="Protein">Protein(g)</string>
+    <string name="Calorie">Calorie(Kcal)</string>
+    <string name="Carbohydrate">Carbohydrate(g)</string>
+    <string name="Fat">Fat(g)</string>
     <string name="Allergen">Allergen</string>
     <string name="Is_In_Restaurant">Is in restaurant</string>
     <string name="Food_day">Food of the day</string>
@@ -95,6 +95,15 @@
 
     <string name="GenerateMenu">Generate Menu</string>
     <string name="InsertDish">Insert Dish</string>
+
+
+    <string name="ShowProtein">Protein(g):</string>
+    <string name="ShowCalorie">Calorie(Kcal):</string>
+    <string name="ShowCarbohydrate">Carbohydrate(g):</string>
+    <string name="ShowFat">Fat(g):</string>
+    <string name="ShowAllergen">Allergen:</string>
+    <string name="ShowType">Type:</string>
+    <string name="ShowCategory">Category:</string>
 
 
 </resources>

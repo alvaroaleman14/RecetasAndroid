@@ -6,10 +6,10 @@
     <string name="previous">Anterior</string>
     <string name="Dish_Name">Nombre</string>
     <string name="Description_Dish">Descripción</string>
-    <string name="Protein">Proteina</string>
-    <string name="Calorie">Caloria</string>
-    <string name="Carbohydrate">Hidrato de Carbono</string>
-    <string name="Fat">Grasa</string>
+    <string name="Protein">Proteina(g)</string>
+    <string name="Calorie">Caloria(Kcal)</string>
+    <string name="Carbohydrate">Hidrato de Carbono(g)</string>
+    <string name="Fat">Grasa(g)</string>
     <string name="Allergen">Alérgeno</string>
     <string name="Is_In_Restaurant">Está en restaurante</string>
     <string name="Food_day">Comida del día</string>
@@ -78,4 +78,13 @@
 
     <string name="GenerateMenu">Generar Menu</string>
     <string name="InsertDish">Insertar Plato</string>
+
+
+    <string name="ShowProtein">Proteina(g):</string>
+    <string name="ShowCalorie">Caloria(Kcal):</string>
+    <string name="ShowCarbohydrate">Hidrato de Carbono(g):</string>
+    <string name="ShowFat">Grasa(g):</string>
+    <string name="ShowAllergen">Alérgeno:</string>
+    <string name="ShowType">Tipo:</string>
+    <string name="ShowCategory">Categoria:</string>
 </resources>
