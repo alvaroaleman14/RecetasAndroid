@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.example.recetas.DB.Dish;
 import com.example.recetas.DB.RecipeBook;
@@ -89,7 +90,9 @@ public class GenerarMenu extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(GenerarMenu.this);
             builder.setPositiveButton(R.string.Ok, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
+
                     crearMenu(v);
+                    Toast.makeText(getApplicationContext(), R.string.ListMenuSuccessfully, Toast.LENGTH_SHORT).show();
                 }
             });
             builder.setNegativeButton(R.string.Cancel, new DialogInterface.OnClickListener() {
